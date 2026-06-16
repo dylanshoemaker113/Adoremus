@@ -19,12 +19,13 @@
   --color-parchment-deep: #E9E0CF;/* alternating section / card background */
   --color-parchment-line: #DCD2BC;/* hairlines on parchment */
   --color-gold: #B5872E;          /* primary accent */
-  --color-gold-bright: #D9B36A;   /* glow / highlight */
+  --color-gold-bright: #ccb15a;   /* glow / highlight */
   --color-cardinal: #7C2433;      /* secondary accent */
   --color-stone: #9C9282;         /* muted text, borders */
   --color-night: #1B1712;         /* dark section background */
   --color-night-deep: #100D0A;    /* deepest background */
   --color-night-text: #ECE3D2;    /* text on dark */
+  --color-red-bright: #c93a3a;   /* glow / highlight */
 
   /* Typography */
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
@@ -292,8 +293,8 @@ blockquote.scripture cite {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 50%;
-  background: var(--color-gold-bright);
-  box-shadow: 0 0 6px 2px rgba(217, 179, 106, 0.7);
+  background: var(--color-red-bright);
+  box-shadow: 0 0 6px 2px rgba(217, 106, 106, 0.7);
   flex-shrink: 0;
 }
 
@@ -302,7 +303,7 @@ blockquote.scripture cite {
   position: absolute;
   inset: -6px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(217, 179, 106, 0.55) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217, 106, 106, 0.55) 0%, transparent 70%);
   animation: lamp-breathe 4.5s ease-in-out infinite;
 }
 

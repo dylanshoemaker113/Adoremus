@@ -61,7 +61,6 @@
         '<div class="footer-lamp">' +
           '<span class="lamp" aria-hidden="true"></span>' +
           '<span>&ldquo;Unless you eat the flesh of the Son of Man and drink his blood, you do not have life within you.&rdquo;</span>' +
-          '<span class="lamp" aria-hidden="true"></span>' +
         '</div>' +
         '<p class="accordion-note" style="margin:0;">John 6:53</p>' +
         '<nav class="footer-nav" aria-label="Footer navigation">' + links + '</nav>' +
