@@ -60,11 +60,12 @@
       '<div class="container footer-inner">' +
         '<div class="footer-lamp">' +
           '<span class="lamp" aria-hidden="true"></span>' +
-          '<span>&ldquo;I am the living bread which came down from heaven.&rdquo;</span>' +
+          '<span>&ldquo;Unless you eat the flesh of the Son of Man and drink his blood, you do not have life within you.&rdquo;</span>' +
+          '<span class="lamp" aria-hidden="true"></span>' +
         '</div>' +
-        '<p class="accordion-note" style="margin:0;">John 6:51</p>' +
+        '<p class="accordion-note" style="margin:0;">John 6:53</p>' +
         '<nav class="footer-nav" aria-label="Footer navigation">' + links + '</nav>' +
-        '<p class="footer-copy">&copy; <span data-year></span> ' + SITE_NAME + '. Built for the glory of God &mdash; feel free to adapt and share.</p>' +
+        '<p class="footer-copy">&copy; <span data-year></span> ' + SITE_NAME + '. Built for the glory of God.</p>' +
       '</div>'
     );
   }
