@@ -6,7 +6,7 @@
    ========================================================================== */
 
 (function () {
-  var SITE_NAME = "Adoremus te"; // change the site name/wordmark here
+  var SITE_NAME = "Adoremus"; // change the site name/wordmark here
   var SITE_TAGLINE = "The Real Presence of Christ";
 
   var NAV_LINKS = [
