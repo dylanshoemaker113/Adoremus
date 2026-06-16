@@ -1164,3 +1164,85 @@ ol.steps li {
   .section { padding: var(--space-5) 0; }
   .hero { padding: var(--space-5) 0 var(--space-4); }
 }
+/* ============================================================
+   Eucharistic Miracles — browser styles
+   Paste this whole block into your site's existing css/style.css
+   (anywhere is fine — end of the file is simplest).
+   Variables are prefixed --miracle- so they won't collide with
+   anything you already have defined in :root.
+   ============================================================ */
+
+:root{
+  --miracle-ink-soft: #5b5048;
+  --miracle-parchment-deep: #eee3c9;
+  --miracle-hairline: #ddd0b4;
+  --miracle-gold: #a8793a;
+  --miracle-wine: #7a2a30;
+  --miracle-card-bg: #fffdf9;
+}
+
+.miracle-toolbar{
+  display:flex; flex-direction:column; gap:16px; margin-bottom:44px;
+}
+.miracle-search{
+  width:100%; max-width:360px; padding:12px 16px; font-family:'Inter',sans-serif;
+  font-size:.95rem; border:1px solid var(--miracle-hairline); border-radius:3px;
+  background:var(--miracle-card-bg); color:inherit;
+}
+.miracle-search:focus{ outline:2px solid var(--miracle-gold); outline-offset:1px; }
+
+.country-jump{
+  font-family:'Inter',sans-serif; font-size:13px; line-height:2; color:var(--miracle-ink-soft);
+}
+.country-jump a{ color:var(--miracle-wine); text-decoration:none; }
+.country-jump a:hover, .country-jump a:focus-visible{ text-decoration:underline; }
+.country-jump .sep{ color:var(--miracle-hairline); margin:0 2px; }
+
+.country-section{ margin-bottom:58px; scroll-margin-top:24px; }
+.country-heading{
+  display:flex; align-items:baseline; gap:14px; margin-bottom:22px;
+  border-bottom:1px solid var(--miracle-hairline); padding-bottom:10px;
+}
+.country-heading h2{
+  font-family:'Fraunces',serif; font-weight:600; font-size:1.4rem;
+  letter-spacing:.04em; text-transform:uppercase; margin:0;
+}
+.country-count{
+  font-family:'Inter',sans-serif; font-size:12.5px; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--miracle-gold); white-space:nowrap;
+}
+
+.miracle-grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:22px;
+}
+.miracle-card{
+  background:var(--miracle-card-bg); border:1px solid var(--miracle-hairline); border-radius:4px;
+  overflow:hidden; display:flex; flex-direction:column;
+}
+.miracle-card-image{
+  height:140px; background:var(--miracle-parchment-deep); background-size:cover; background-position:center;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Inter',sans-serif; font-size:12.5px; letter-spacing:.03em; color:var(--miracle-ink-soft);
+}
+.miracle-card-body{ padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.miracle-card-meta{
+  margin:0; font-family:'Inter',sans-serif; font-size:12px; letter-spacing:.05em;
+  text-transform:uppercase; color:var(--miracle-wine);
+}
+.miracle-card-body h3{ margin:0; font-family:'Fraunces',serif; font-size:1.12rem; line-height:1.3; }
+.miracle-card-desc{ margin:2px 0 8px; font-size:.92rem; line-height:1.55; color:var(--miracle-ink-soft); flex:1; }
+.miracle-card-link{
+  font-family:'Inter',sans-serif; font-size:.85rem; font-weight:600; color:var(--miracle-wine); text-decoration:none;
+}
+.miracle-card-link:hover, .miracle-card-link:focus-visible{ text-decoration:underline; }
+.miracle-card-link--empty{
+  font-family:'Inter',sans-serif; font-size:.85rem; font-weight:500; font-style:italic; color:var(--miracle-ink-soft);
+}
+
+.miracle-empty{
+  display:none; font-family:'Inter',sans-serif; color:var(--miracle-ink-soft); padding:40px 0; text-align:center;
+}
+
+@media (max-width:560px){
+  .country-heading{ flex-wrap:wrap; }
+}

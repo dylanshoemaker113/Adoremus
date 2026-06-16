@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eucharistic Miracles | Adoremus</title>
-  <meta name="description" content="A searchable guide to Church-investigated Eucharistic miracles — bleeding hosts, preservation and protection miracles, and the saints connected to them.">
+  <meta name="description" content="A register of Church-investigated Eucharistic miracles from around the world, organized by country.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- All styles for this page (including the new miracle browser) live in css/style.css.
+       See miracle-browser-styles.css for the block to paste in there. -->
 </head>
 <body>
 
@@ -26,7 +28,7 @@
           it is not only the substance that changes &mdash; as Catholics
           believe happens at every Mass &mdash; but the
           <em>appearance</em> as well: ordinary bread and wine become,
-          <b>visibly</b>, flesh and blood. 
+          <b>visibly</b>, flesh and blood.
         </p>
       </div>
     </header>
@@ -34,292 +36,14 @@
     <section class="section">
       <div class="container">
 
-        <!-- ============================= FILTERS ============================= -->
-        <div class="filter-bar">
-          <div class="filter-group" role="group" aria-label="Filter by category">
-            <button class="filter-chip is-active" data-filter="all">All</button>
-            <button class="filter-chip" data-filter="bleeding-host">Bleeding Hosts</button>
-            <button class="filter-chip" data-filter="preservation">Preservation Miracles</button>
-            <button class="filter-chip" data-filter="protection">Protection Miracles</button>
-            <button class="filter-chip" data-filter="saint">Miracle Saints</button>
-          </div>
-          <div class="filter-controls">
-            <input type="search" id="miracle-search" class="field-input" placeholder="Search by name or location…" aria-label="Search miracles">
-            <select id="miracle-sort" class="field-select" aria-label="Sort miracles">
-              <option value="">Sort by…</option>
-              <option value="year-asc">Year &mdash; oldest first</option>
-              <option value="year-desc">Year &mdash; most recent first</option>
-              <option value="location-az">Location &mdash; A to Z</option>
-            </select>
-          </div>
+        <div class="miracle-toolbar">
+          <input type="search" id="miracle-search" class="miracle-search" placeholder="Search by country or location…" aria-label="Search miracles">
+          <nav class="country-jump" id="country-jump" aria-label="Jump to country"></nav>
         </div>
 
-        <!-- ============================= MIRACLE GRID ============================= -->
-        <div class="miracle-grid">
+        <div id="miracle-list"></div>
 
-          <!-- ===== LANCIANO (fully worked example) ===== -->
-          <details class="miracle-card" data-category="bleeding-host" data-century="8" data-location="Lanciano, Italy" data-year="700">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: Reliquary of the Eucharistic Miracle of Lanciano</div>
-              </div>
-              <span class="miracle-meta">Lanciano, Italy &middot; c. 700 AD &middot; Bleeding Host</span>
-              <h3>The Eucharistic Miracle of Lanciano</h3>
-              <p class="miracle-summary">
-                According to a tradition dating to the eighth century, a
-                monk who doubted the Real Presence saw the host turn to
-                visible flesh and the wine turn to blood during Mass. The
-                relics have been venerated and displayed ever since.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-
-            <div class="miracle-detail">
-              <h4>Historical Context</h4>
-              <p>
-                Tradition holds that around the year 700 AD, a monk of the
-                Basilian order was celebrating Mass in a small chapel near
-                Lanciano, in the Abruzzo region of Italy, and was troubled
-                by doubts about whether the bread and wine truly became the
-                Body and Blood of Christ. At the moment of consecration,
-                witnesses said the host visibly changed into a circle of
-                flesh, and the wine in the chalice turned to blood, which
-                then coagulated into five globules of unequal size and
-                shape.
-              </p>
-
-              <h4>Timeline</h4>
-              <ul class="list-clean">
-                <li><strong>c. 700 AD</strong> &mdash; The miracle is said to occur during Mass in a chapel outside Lanciano.</li>
-                <li><strong>1258</strong> &mdash; The relics are moved to the Church of San Francesco in Lanciano for safekeeping, where they remain today.</li>
-                <li><strong>1574</strong> &mdash; The Archbishop of Chieti conducts a formal ecclesiastical inventory, recording the size, weight, and appearance of the relics.</li>
-                <li><strong>1637</strong> &mdash; A further inspection confirms the relics are unchanged.</li>
-                <li><strong>1970&ndash;71</strong> &mdash; A scientific commission, led by Professor Edoardo Linoli, examines the relics using modern histological methods.</li>
-                <li><strong>1981</strong> &mdash; A follow-up study reaffirms the earlier findings.</li>
-                <li><strong>Today</strong> &mdash; The relics remain enshrined in the Sanctuary of the Eucharistic Miracle in Lanciano, visited by pilgrims year-round.</li>
-              </ul>
-
-              <h4>Church Investigation</h4>
-              <p>
-                The relics have been examined by Church authorities multiple
-                times over the centuries, beginning with the formal 1574
-                inventory. Each subsequent examination found the relics
-                essentially unchanged from previous records &mdash; notable,
-                given that ordinary human tissue and blood would decompose
-                within a short time.
-              </p>
-
-              <h4>Scientific Findings</h4>
-              <p>
-                In 1970&ndash;71, an interdisciplinary scientific commission
-                examined the relics with modern laboratory techniques.
-                According to the commission's report, the flesh was
-                identified as human cardiac tissue, complete with structures
-                such as the endocardium and a branch of the coronary artery,
-                and the five globules were confirmed to be real human blood,
-                type AB. The commission reported finding no trace of any
-                preservatives or substances that would explain the relics'
-                condition after so many centuries.
-              </p>
-
-              <h4>Church Approval Status</h4>
-              <p>
-                The Eucharistic Miracle of Lanciano has been venerated for
-                over a thousand years with the long-standing support of
-                local Church authorities, and the relics have been visited
-                and venerated by several popes. It remains one of the most
-                widely venerated Eucharistic miracles in the Catholic world.
-              </p>
-
-              <h4>Sources &amp; Further Reading</h4>
-              <ul class="list-clean">
-                <li>Sanctuary of the Eucharistic Miracle, Lanciano &mdash; official shrine information <span class="accordion-note">(add link)</span></li>
-                <li>Reports of the 1970&ndash;71 and 1981 scientific commissions <span class="accordion-note">(add link/citation)</span></li>
-                <li><span class="accordion-note">Add your own articles and sources here.</span></li>
-              </ul>
-
-              <h4>Pilgrimage Information</h4>
-              <dl>
-                <dt>Where</dt>
-                <dd>Church of San Francesco, Lanciano, Abruzzo, Italy</dd>
-                <dt>What to See</dt>
-                <dd>The flesh and blood relics, enshrined in a silver reliquary above the high altar</dd>
-                <dt>Access</dt>
-                <dd>Open daily to visitors and pilgrims; Lanciano is reachable by train or car from Pescara</dd>
-              </dl>
-            </div>
-          </details>
-
-          <!-- ===== BUENOS AIRES (stub) ===== -->
-          <details class="miracle-card" data-category="bleeding-host" data-century="20" data-location="Buenos Aires, Argentina" data-year="1996">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: Parish of Santa María, Buenos Aires</div>
-              </div>
-              <span class="miracle-meta">Buenos Aires, Argentina &middot; 1996 &middot; Bleeding Host</span>
-              <h3>The Eucharistic Miracle of Buenos Aires</h3>
-              <p class="miracle-summary">
-                In 1996, a consecrated host placed in water (the usual
-                practice for a damaged host) was reported to develop the
-                appearance of blood and living tissue over several days.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Status</h4>
-              <p>
-                <span class="accordion-note">Full entry coming soon &mdash;
-                add historical context, timeline, investigation details,
-                scientific findings, sources, and pilgrimage information
-                using the Lanciano entry above as a template.</span>
-              </p>
-            </div>
-          </details>
-
-          <!-- ===== SOKÓŁKA (stub) ===== -->
-          <details class="miracle-card" data-category="bleeding-host" data-century="21" data-location="Sokółka, Poland" data-year="2008">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: Church of St. Anthony, Sokółka</div>
-              </div>
-              <span class="miracle-meta">Sokółka, Poland &middot; 2008 &middot; Bleeding Host</span>
-              <h3>The Eucharistic Miracle of Sokółka</h3>
-              <p class="miracle-summary">
-                In 2008, a dropped host placed in water developed a
-                red stain that, on examination by forensic pathologists,
-                was reported to resemble fragments of a living human heart
-                under great strain.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Status</h4>
-              <p>
-                <span class="accordion-note">Full entry coming soon &mdash;
-                add historical context, timeline, investigation details,
-                scientific findings, sources, and pilgrimage information
-                using the Lanciano entry above as a template.</span>
-              </p>
-            </div>
-          </details>
-
-          <!-- ===== TIXTLA (stub) ===== -->
-          <details class="miracle-card" data-category="bleeding-host" data-century="21" data-location="Tixtla, Mexico" data-year="2006">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: Parish church, Tixtla</div>
-              </div>
-              <span class="miracle-meta">Tixtla, Mexico &middot; 2006 &middot; Bleeding Host</span>
-              <h3>The Eucharistic Miracle of Tixtla</h3>
-              <p class="miracle-summary">
-                In 2006, a consecrated host was reported to exude what
-                appeared to be blood during Mass at a parish in the
-                Diocese of Chilpancingo-Chilapa.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Status</h4>
-              <p>
-                <span class="accordion-note">Full entry coming soon &mdash;
-                add historical context, timeline, investigation details,
-                scientific findings, sources, and pilgrimage information
-                using the Lanciano entry above as a template.</span>
-              </p>
-            </div>
-          </details>
-
-          <!-- ===== TEMPLATE: PRESERVATION ===== -->
-          <details class="miracle-card" data-category="preservation" data-century="" data-location="" data-year="0">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: add a photo for this miracle</div>
-              </div>
-              <span class="miracle-meta">Location &middot; Year &middot; Preservation Miracle</span>
-              <h3>Add a Preservation Miracle</h3>
-              <p class="miracle-summary">
-                Preservation miracles involve a consecrated host that
-                remained incorrupt &mdash; unaffected by mold or decay
-                &mdash; far beyond what is naturally possible. Replace this
-                card with a specific example from your list.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Template</h4>
-              <p>
-                <span class="accordion-note">Copy the Lanciano entry's
-                structure (Historical Context, Timeline, Church
-                Investigation, Scientific Findings, Church Approval Status,
-                Sources, Pilgrimage Information) and fill it in for this
-                miracle. Update the data-category, data-century,
-                data-location, and data-year attributes on the
-                &lt;details&gt; tag so filtering and sorting work
-                correctly.</span>
-              </p>
-            </div>
-          </details>
-
-          <!-- ===== TEMPLATE: PROTECTION ===== -->
-          <details class="miracle-card" data-category="protection" data-century="" data-location="" data-year="0">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: add a photo for this miracle</div>
-              </div>
-              <span class="miracle-meta">Location &middot; Year &middot; Protection Miracle</span>
-              <h3>Add a Protection Miracle</h3>
-              <p class="miracle-summary">
-                Protection miracles involve a consecrated host or tabernacle
-                that survived a fire, flood, theft, or other disaster
-                unharmed. Replace this card with a specific example from
-                your list.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Template</h4>
-              <p>
-                <span class="accordion-note">Copy the Lanciano entry's
-                structure and fill it in for this miracle. Update the
-                data-category, data-century, data-location, and data-year
-                attributes on the &lt;details&gt; tag so filtering and
-                sorting work correctly.</span>
-              </p>
-            </div>
-          </details>
-
-          <!-- ===== TEMPLATE: MIRACLE SAINTS ===== -->
-          <details class="miracle-card" data-category="saint" data-century="" data-location="" data-year="0">
-            <summary>
-              <div class="miracle-card-media">
-                <div class="media-placeholder media-placeholder--wide">Image: add a photo for this miracle</div>
-              </div>
-              <span class="miracle-meta">Location &middot; Year &middot; Miracle Saint</span>
-              <h3>Add a Miracle Connected to a Saint</h3>
-              <p class="miracle-summary">
-                Some Eucharistic miracles are tied directly to the life of a
-                particular saint &mdash; a Eucharistic vision, a levitation
-                during adoration, or a Host that bore witness to their
-                holiness. Replace this card with a specific example from
-                your list.
-              </p>
-              <span class="miracle-card-readmore"></span>
-            </summary>
-            <div class="miracle-detail">
-              <h4>Template</h4>
-              <p>
-                <span class="accordion-note">Copy the Lanciano entry's
-                structure and fill it in for this miracle. Update the
-                data-category, data-century, data-location, and data-year
-                attributes on the &lt;details&gt; tag so filtering and
-                sorting work correctly.</span>
-              </p>
-            </div>
-          </details>
-
-        </div>
-
-        <p class="miracle-empty">No miracles match your search. Try a different term or filter.</p>
+        <p class="miracle-empty" id="miracle-empty">No miracles match your search.</p>
 
       </div>
     </section>
@@ -329,6 +53,241 @@
   <div id="site-footer"></div>
 
   <script src="js/nav.js"></script>
+
+  <script>
+    /* ============================================================
+       FILL THIS OUT
+       Location and year are already filled in for every miracle on
+       your list. For each one, add what you have to:
+         description — a sentence or two about what happened
+         image       — a path or URL to a photo (e.g. "images/lanciano.jpg")
+         link         — the URL of your full article on this miracle
+       Leave any field as "" and the card will show a placeholder
+       instead, so you can fill these out gradually.
+       ============================================================ */
+
+    const miracleCountries = [
+      { country: "Argentina", entries: [
+        { location: "Buenos Aires", year: "1992–1994–1996", description: "", image: "", link: "" }
+      ]},
+      { country: "Austria", entries: [
+        { location: "Fiecht", year: "1310", description: "", image: "", link: "" },
+        { location: "Seefeld", year: "1384", description: "", image: "", link: "" },
+        { location: "Weiten-Raxendorf", year: "1411", description: "", image: "", link: "" }
+      ]},
+      { country: "Belgium", entries: [
+        { location: "Bois-Seigneur-Isaac", year: "1405", description: "", image: "", link: "" },
+        { location: "Bruges", year: "1203", description: "", image: "", link: "" },
+        { location: "Brussels", year: "1370", description: "", image: "", link: "" },
+        { location: "Herentals", year: "1412", description: "", image: "", link: "" },
+        { location: "Herkenrode-Hasselt", year: "1317", description: "", image: "", link: "" },
+        { location: "Liège", year: "1374", description: "", image: "", link: "" },
+        { location: "Middleburg-Lovanio", year: "1374", description: "", image: "", link: "" }
+      ]},
+      { country: "Colombia", entries: [
+        { location: "Tumaco", year: "1906", description: "", image: "", link: "" }
+      ]},
+      { country: "Croatia", entries: [
+        { location: "Ludbreg", year: "1411", description: "", image: "", link: "" }
+      ]},
+      { country: "Egypt", entries: [
+        { location: "St. Mary of Egypt", year: "IV–V cent.", description: "", image: "", link: "" },
+        { location: "Scete", year: "III–V cent.", description: "", image: "", link: "" }
+      ]},
+      { country: "France", entries: [
+        { location: "Avignon", year: "1433", description: "", image: "", link: "" },
+        { location: "Blanot", year: "1331", description: "", image: "", link: "" },
+        { location: "Bordeaux", year: "1822", description: "", image: "", link: "" },
+        { location: "Dijon", year: "1430", description: "", image: "", link: "" },
+        { location: "Douai", year: "1254", description: "", image: "", link: "" },
+        { location: "Faverney", year: "1608", description: "", image: "", link: "" },
+        { location: "La Rochelle", year: "1461", description: "", image: "", link: "" },
+        { location: "Neuvy Saint Sepulcre", year: "1257", description: "", image: "", link: "" },
+        { location: "Les Ulmes", year: "1668", description: "", image: "", link: "" },
+        { location: "Marseille-En-Beauvais", year: "1533", description: "", image: "", link: "" },
+        { location: "Paris", year: "1290", description: "", image: "", link: "" },
+        { location: "Pressac", year: "1643", description: "", image: "", link: "" }
+      ]},
+      { country: "Germany", entries: [
+        { location: "Augsburg", year: "1194", description: "", image: "", link: "" },
+        { location: "Benningen", year: "1216", description: "", image: "", link: "" },
+        { location: "Bettbrunn", year: "1125", description: "", image: "", link: "" },
+        { location: "Erding", year: "1417", description: "", image: "", link: "" },
+        { location: "Kranenburg", year: "1280", description: "", image: "", link: "" },
+        { location: "Regensburg", year: "1255", description: "", image: "", link: "" },
+        { location: "Walldürn", year: "1330", description: "", image: "", link: "" },
+        { location: "Weingarten / Wilsnack", year: "1383", description: "", image: "", link: "" }
+      ]},
+      { country: "India", entries: [
+        { location: "Chirattakonam", year: "2001", description: "", image: "", link: "" }
+      ]},
+      { country: "Martinique", entries: [
+        { location: "Morne-Rouge", year: "1902", description: "", image: "", link: "" }
+      ]},
+      { country: "Réunion Island", entries: [
+        { location: "Saint-André de la Réunion", year: "1902", description: "", image: "", link: "" }
+      ]},
+      { country: "Italy", entries: [
+        { location: "Alatri", year: "1228", description: "", image: "", link: "" },
+        { location: "Assisi (St. Clare)", year: "1240", description: "", image: "", link: "" },
+        { location: "Asti", year: "1535", description: "", image: "", link: "" },
+        { location: "Bagno di Romagna", year: "1412", description: "", image: "", link: "" },
+        { location: "Bolsena", year: "1264", description: "", image: "", link: "" },
+        { location: "Canosio", year: "1630", description: "", image: "", link: "" },
+        { location: "Cascia", year: "1330", description: "", image: "", link: "" },
+        { location: "Cava dei Tirreni", year: "1656", description: "", image: "", link: "" },
+        { location: "Dronero", year: "1631", description: "", image: "", link: "" },
+        { location: "San Mauro La Bruca", year: "1969", description: "", image: "", link: "" },
+        { location: "Ferrara", year: "1171", description: "", image: "", link: "" },
+        { location: "Florence", year: "1230–1595", description: "", image: "", link: "" },
+        { location: "Gruaro (Valvasone)", year: "1294", description: "", image: "", link: "" },
+        { location: "Lanciano", year: "c. 700", description: "A monk who doubted the Real Presence saw the host turn to visible flesh and the wine turn to blood during Mass. The relics have been venerated and displayed ever since.", image: "", link: "" },
+        { location: "Macerata", year: "1356", description: "", image: "", link: "" },
+        { location: "Mogoro", year: "1604", description: "", image: "", link: "" },
+        { location: "Morrovalle", year: "1560", description: "", image: "", link: "" },
+        { location: "Offida", year: "1273–1280", description: "", image: "", link: "" },
+        { location: "Patierno (Naples)", year: "1772", description: "", image: "", link: "" },
+        { location: "Rimini", year: "1227", description: "", image: "", link: "" },
+        { location: "Rome", year: "VI–VII cent.", description: "", image: "", link: "" },
+        { location: "Rome", year: "1610", description: "", image: "", link: "" },
+        { location: "Rosano", year: "1948", description: "", image: "", link: "" },
+        { location: "St. Peter Damian", year: "XI cent.", description: "", image: "", link: "" },
+        { location: "Salzano", year: "1517", description: "", image: "", link: "" },
+        { location: "Scala", year: "1732", description: "", image: "", link: "" },
+        { location: "Siena", year: "1730", description: "", image: "", link: "" },
+        { location: "Trani", year: "XI cent.", description: "", image: "", link: "" },
+        { location: "Turin", year: "1453", description: "", image: "", link: "" },
+        { location: "Turin", year: "1640", description: "", image: "", link: "" },
+        { location: "Veroli", year: "1570", description: "", image: "", link: "" },
+        { location: "Volterra", year: "1472", description: "", image: "", link: "" }
+      ]},
+      { country: "Mexico", entries: [
+        { location: "Tixtla", year: "2006", description: "", image: "", link: "" }
+      ]},
+      { country: "Holland", entries: [
+        { location: "Alkmaar", year: "1429", description: "", image: "", link: "" },
+        { location: "Amsterdam", year: "1345", description: "", image: "", link: "" },
+        { location: "Bergen", year: "1421", description: "", image: "", link: "" },
+        { location: "Boxmeer", year: "1400", description: "", image: "", link: "" },
+        { location: "Boxtel-Hoogstraten", year: "1380", description: "", image: "", link: "" },
+        { location: "Breda-Niervaart", year: "1300", description: "", image: "", link: "" },
+        { location: "Meerssen", year: "1222–1465", description: "", image: "", link: "" },
+        { location: "Stiphout", year: "1342", description: "", image: "", link: "" }
+      ]},
+      { country: "Peru", entries: [
+        { location: "Eten", year: "1649", description: "", image: "", link: "" }
+      ]},
+      { country: "Poland", entries: [
+        { location: "Krakow", year: "1345", description: "", image: "", link: "" },
+        { location: "Glotowo", year: "1290", description: "", image: "", link: "" },
+        { location: "Legnica", year: "2013", description: "", image: "", link: "" },
+        { location: "Poznan", year: "1399", description: "", image: "", link: "" },
+        { location: "Sokółka", year: "2008", description: "", image: "", link: "" }
+      ]},
+      { country: "Portugal", entries: [
+        { location: "Santarém", year: "1247", description: "", image: "", link: "" }
+      ]},
+      { country: "Spain", entries: [
+        { location: "Alboraya-Almacéra", year: "1348", description: "", image: "", link: "" },
+        { location: "Alcalà", year: "1597", description: "", image: "", link: "" },
+        { location: "Alcoy", year: "1568", description: "", image: "", link: "" },
+        { location: "Caravaca de la Cruz", year: "1231", description: "", image: "", link: "" },
+        { location: "Cimballa", year: "1370", description: "", image: "", link: "" },
+        { location: "Daroca", year: "1239", description: "", image: "", link: "" },
+        { location: "Gerona", year: "1297", description: "", image: "", link: "" },
+        { location: "Gorkum-El Escorial", year: "1572", description: "", image: "", link: "" },
+        { location: "Guadalupe", year: "1420", description: "", image: "", link: "" },
+        { location: "Ivorra", year: "1010", description: "", image: "", link: "" },
+        { location: "Moncada", year: "1392", description: "", image: "", link: "" },
+        { location: "Montserrat", year: "1657", description: "", image: "", link: "" },
+        { location: "O'Cebreiro", year: "1300", description: "", image: "", link: "" },
+        { location: "Onil", year: "1824", description: "", image: "", link: "" },
+        { location: "Ponferrada", year: "1533", description: "", image: "", link: "" },
+        { location: "S. John of the Abbesses", year: "1251", description: "", image: "", link: "" },
+        { location: "Silla", year: "1907", description: "", image: "", link: "" },
+        { location: "Valencia / Zaragoza", year: "1427", description: "", image: "", link: "" }
+      ]},
+      { country: "Switzerland", entries: [
+        { location: "Ettiswil", year: "1447", description: "", image: "", link: "" }
+      ]},
+      { country: "Venezuela", entries: [
+        { location: "Betania", year: "1991", description: "", image: "", link: "" }
+      ]}
+    ];
+
+    function slugify(str){
+      return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+    }
+
+    function cardHTML(country, entry){
+      const desc = entry.description && entry.description.trim() !== ''
+        ? entry.description
+        : 'Add a short description of what happened here.';
+      const hasImg = entry.image && entry.image.trim() !== '';
+      const hasLink = entry.link && entry.link.trim() !== '';
+      const searchKey = (country + ' ' + entry.location).toLowerCase();
+
+      return `
+        <article class="miracle-card" data-search="${searchKey}">
+          <div class="miracle-card-image"${hasImg ? ` style="background-image:url('${entry.image}')"` : ''}>
+            ${hasImg ? '' : '<span>Add photo</span>'}
+          </div>
+          <div class="miracle-card-body">
+            <p class="miracle-card-meta">${country} · ${entry.year}</p>
+            <h3>${entry.location}</h3>
+            <p class="miracle-card-desc">${desc}</p>
+            ${hasLink
+              ? `<a class="miracle-card-link" href="${entry.link}" target="_blank" rel="noopener">Read the full article →</a>`
+              : `<span class="miracle-card-link miracle-card-link--empty">Add a link to the full article</span>`}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderMiracles(data){
+      const root = document.getElementById('miracle-list');
+      root.innerHTML = data.map(country => `
+        <section class="country-section" id="${slugify(country.country)}">
+          <div class="country-heading">
+            <h2>${country.country}</h2>
+            <span class="country-count">${country.entries.length} miracle${country.entries.length > 1 ? 's' : ''}</span>
+          </div>
+          <div class="miracle-grid">
+            ${country.entries.map(e => cardHTML(country.country, e)).join('')}
+          </div>
+        </section>
+      `).join('');
+    }
+
+    function renderJumpNav(data){
+      const nav = document.getElementById('country-jump');
+      nav.innerHTML = data
+        .map(c => `<a href="#${slugify(c.country)}">${c.country}</a>`)
+        .join('<span class="sep" aria-hidden="true">·</span>');
+    }
+
+    renderMiracles(miracleCountries);
+    renderJumpNav(miracleCountries);
+
+    document.getElementById('miracle-search').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      let anyVisible = false;
+
+      document.querySelectorAll('.country-section').forEach(section => {
+        let sectionHasVisible = false;
+        section.querySelectorAll('.miracle-card').forEach(card => {
+          const match = card.dataset.search.includes(q);
+          card.style.display = match ? '' : 'none';
+          if (match) sectionHasVisible = true;
+        });
+        section.style.display = sectionHasVisible ? '' : 'none';
+        if (sectionHasVisible) anyVisible = true;
+      });
+
+      document.getElementById('miracle-empty').style.display = anyVisible ? 'none' : 'block';
+    });
+  </script>
+
   <script src="js/main.js"></script>
 </body>
 </html>
