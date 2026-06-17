@@ -1100,3 +1100,14 @@ ol.steps li {
 @media (max-width:560px){
   .country-heading{ flex-wrap:wrap; }
 }
+
+.hardest-teaching {
+  background-color: var(--color-night);
+  color: var(--color-night-text);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-3);
+  margin: var(--space-4) 0;
+}
+.hardest-teaching h3 {
+  color: var(--color-night-text);
+}
