@@ -7,31 +7,41 @@
    tabernacle), cardinal red (the sanctuary lamp, vestments for the Blessed
    Sacrament), and "night" (the dim hush of an adoration chapel).
    ========================================================================== */
-
 /* --------------------------------------------------------------------
    1. DESIGN TOKENS
    -------------------------------------------------------------------- */
 :root {
   /* Colors */
-  --color-ink: #221E19;          /* primary text */
-  --color-ink-soft: #534A3F;      /* secondary text */
-  --color-parchment: #F4EFE5;     /* page background */
-  --color-parchment-deep: #E9E0CF;/* alternating section / card background */
-  --color-parchment-line: #DCD2BC;/* hairlines on parchment */
-  --color-gold: #B5872E;          /* primary accent */
-  --color-gold-bright: #ccb15a;   /* glow / highlight */
-  --color-cardinal: #7C2433;      /* secondary accent */
-  --color-stone: #9C9282;         /* muted text, borders */
-  --color-night: #1B1712;         /* dark section background */
-  --color-night-deep: #100D0A;    /* deepest background */
-  --color-night-text: #ECE3D2;    /* text on dark */
-  --color-red-bright: #c93a3a;   /* glow / highlight */
-
+  --color-ink: 
+#221E19;          /* primary text */
+  --color-ink-soft: 
+#534A3F;      /* secondary text */
+  --color-parchment: 
+#F4EFE5;     /* page background */
+  --color-parchment-deep: 
+#E9E0CF;/* alternating section / card background */
+  --color-parchment-line: 
+#DCD2BC;/* hairlines on parchment */
+  --color-gold: 
+#B5872E;          /* primary accent */
+  --color-gold-bright: 
+#ccb15a;   /* glow / highlight */
+  --color-cardinal: 
+#7C2433;      /* secondary accent */
+  --color-stone: 
+#9C9282;         /* muted text, borders */
+  --color-night: 
+#1B1712;         /* dark section background */
+  --color-night-deep: 
+#100D0A;    /* deepest background */
+  --color-night-text: 
+#ECE3D2;    /* text on dark */
+  --color-red-bright: 
+#c93a3a;   /* glow / highlight */
   /* Typography */
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --font-ui: 'Inter', -apple-system, 'Segoe UI', sans-serif;
-
   /* Layout */
   --container: 1120px;
   --container-narrow: 760px;
@@ -42,11 +52,9 @@
   --space-4: 2.5rem;
   --space-5: 4rem;
   --space-6: 6rem;
-
   /* Motion */
   --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 /* --------------------------------------------------------------------
    2. RESET & BASE
    -------------------------------------------------------------------- */
@@ -55,12 +63,10 @@
 *::after {
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
 }
-
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -70,12 +76,10 @@ body {
   background-color: var(--color-parchment);
   -webkit-font-smoothing: antialiased;
 }
-
 img {
   max-width: 100%;
   display: block;
 }
-
 a {
   color: var(--color-cardinal);
   text-decoration: underline;
@@ -84,12 +88,10 @@ a {
   text-decoration-color: rgba(124, 36, 51, 0.35);
   transition: color 0.2s var(--ease), text-decoration-color 0.2s var(--ease);
 }
-
 a:hover {
   color: var(--color-gold);
   text-decoration-color: currentColor;
 }
-
 /* Visible focus state everywhere */
 a:focus-visible,
 button:focus-visible,
@@ -100,7 +102,6 @@ summary:focus-visible {
   outline-offset: 3px;
   border-radius: var(--radius);
 }
-
 /* --------------------------------------------------------------------
    3. TYPOGRAPHY
    -------------------------------------------------------------------- */
@@ -111,7 +112,6 @@ h1, h2, h3, h4, h5 {
   color: var(--color-ink);
   margin: 0 0 var(--space-2);
 }
-
 h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 700; }
 h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
 h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); }
@@ -123,25 +123,20 @@ h4 {
   letter-spacing: 0.06em;
   color: var(--color-cardinal);
 }
-
 p {
   margin: 0 0 var(--space-2);
 }
-
 p:last-child {
   margin-bottom: 0;
 }
-
 .lede {
   font-size: 1.2rem;
   color: var(--color-ink-soft);
   max-width: 42rem;
 }
-
 .section--night .lede {
   color: rgba(236, 227, 210, 0.85);
 }
-
 /* Small caps / label style used throughout for navigation, eyebrows, meta */
 .eyebrow {
   font-family: var(--font-ui);
@@ -153,11 +148,9 @@ p:last-child {
   display: inline-block;
   margin-bottom: var(--space-1);
 }
-
 .eyebrow--on-dark {
   color: var(--color-gold-bright);
 }
-
 /* Pull quotes / scripture */
 blockquote.scripture {
   font-family: var(--font-display);
@@ -170,7 +163,6 @@ blockquote.scripture {
   padding-left: var(--space-3);
   border-left: 2px solid var(--color-gold);
 }
-
 blockquote.scripture cite {
   display: block;
   font-family: var(--font-ui);
@@ -181,7 +173,6 @@ blockquote.scripture cite {
   color: var(--color-stone);
   margin-top: var(--space-1);
 }
-
 /* --------------------------------------------------------------------
    4. LAYOUT UTILITIES
    -------------------------------------------------------------------- */
@@ -190,67 +181,53 @@ blockquote.scripture cite {
   margin: 0 auto;
   padding: 0 var(--space-3);
 }
-
 .container--narrow {
   max-width: var(--container-narrow);
 }
-
 .section {
   padding: var(--space-6) 0;
 }
-
 .section--tight {
   padding: var(--space-4) 0;
 }
-
 .section--alt {
   background-color: var(--color-parchment-deep);
 }
-
 .section--night {
   background-color: var(--color-night);
   color: var(--color-night-text);
 }
-
 .section--night h1,
 .section--night h2,
 .section--night h3,
 .section--night strong {
   color: var(--color-night-text);
 }
-
 .section--night a {
   color: var(--color-gold-bright);
 }
-
 .section-header {
   max-width: 46rem;
   margin: 0 auto var(--space-4);
   text-align: center;
 }
-
 .section-header.is-left {
   margin: 0 0 var(--space-4);
   text-align: left;
 }
-
 .grid {
   display: grid;
   gap: var(--space-3);
 }
-
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
 .grid--4 { grid-template-columns: repeat(4, 1fr); }
-
 @media (max-width: 880px) {
   .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 600px) {
   .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
 }
-
 /* A simple ornamental divider used between major content blocks */
 .divider {
   display: flex;
@@ -260,7 +237,6 @@ blockquote.scripture cite {
   margin: var(--space-5) 0;
   color: var(--color-gold);
 }
-
 .divider::before,
 .divider::after {
   content: '';
@@ -269,18 +245,15 @@ blockquote.scripture cite {
   max-width: 220px;
   background: var(--color-parchment-line);
 }
-
 .divider svg {
   width: 14px;
   height: 14px;
   flex-shrink: 0;
 }
-
 .section--night .divider::before,
 .section--night .divider::after {
   background: rgba(236, 227, 210, 0.18);
 }
-
 /* --------------------------------------------------------------------
    5. SANCTUARY LAMP — signature motif
    A small glow that recurs in the header and footer, representing the
@@ -297,7 +270,6 @@ blockquote.scripture cite {
   box-shadow: 0 0 6px 2px rgba(217, 106, 106, 0.7);
   flex-shrink: 0;
 }
-
 .lamp::after {
   content: '';
   position: absolute;
@@ -306,17 +278,14 @@ blockquote.scripture cite {
   background: radial-gradient(circle, rgba(217, 106, 106, 0.55) 0%, transparent 70%);
   animation: lamp-breathe 4.5s ease-in-out infinite;
 }
-
 @keyframes lamp-breathe {
   0%, 100% { opacity: 0.55; transform: scale(0.9); }
   50% { opacity: 1; transform: scale(1.15); }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .lamp::after { animation: none; }
   html { scroll-behavior: auto; }
 }
-
 /* --------------------------------------------------------------------
    6. HEADER & NAVIGATION
    -------------------------------------------------------------------- */
@@ -328,7 +297,6 @@ blockquote.scripture cite {
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-parchment-line);
 }
-
 .header-inner {
   display: flex;
   align-items: center;
@@ -337,7 +305,6 @@ blockquote.scripture cite {
   padding-bottom: var(--space-2);
   gap: var(--space-3);
 }
-
 .wordmark {
   display: flex;
   align-items: center;
@@ -350,16 +317,13 @@ blockquote.scripture cite {
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-
 .wordmark:hover {
   color: var(--color-cardinal);
 }
-
 .site-nav {
   display: flex;
   align-items: center;
 }
-
 .nav-list {
   list-style: none;
   display: flex;
@@ -368,7 +332,6 @@ blockquote.scripture cite {
   margin: 0;
   padding: 0;
 }
-
 .nav-list a {
   font-family: var(--font-ui);
   font-size: 0.72rem;
@@ -382,16 +345,13 @@ blockquote.scripture cite {
   border-bottom: 2px solid transparent;
   transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-
 .nav-list a:hover {
   color: var(--color-cardinal);
 }
-
 .nav-list a[aria-current="page"] {
   color: var(--color-cardinal);
   border-bottom-color: var(--color-gold);
 }
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -404,7 +364,6 @@ blockquote.scripture cite {
   cursor: pointer;
   padding: 0;
 }
-
 .nav-toggle span {
   display: block;
   width: 100%;
@@ -413,10 +372,8 @@ blockquote.scripture cite {
   border-radius: 1px;
   transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
 }
-
 @media (max-width: 1150px) {
   .nav-toggle { display: flex; }
-
   .site-nav {
     position: absolute;
     top: 100%;
@@ -428,64 +385,54 @@ blockquote.scripture cite {
     overflow: hidden;
     transition: max-height 0.3s var(--ease);
   }
-
   .site-nav.is-open {
     max-height: 70vh;
     overflow-y: auto;
   }
-
   .nav-list {
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
     padding: var(--space-2) var(--space-3) var(--space-3);
   }
-
   .nav-list li {
     width: 100%;
   }
-
   .nav-list a {
     display: block;
     padding: 0.7rem 0;
     border-bottom: 1px solid var(--color-parchment-line);
   }
-
   .nav-list a[aria-current="page"] {
     border-bottom: 1px solid var(--color-parchment-line);
   }
-
   .site-nav.is-open ~ .nav-toggle span:nth-child(1),
   .nav-toggle[aria-expanded="true"] span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
-
   .nav-toggle[aria-expanded="true"] span:nth-child(2) {
     opacity: 0;
   }
-
   .nav-toggle[aria-expanded="true"] span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
   }
 }
-
 /* --------------------------------------------------------------------
    7. HERO (homepage)
    -------------------------------------------------------------------- */
 .hero {
-  background: radial-gradient(circle at 50% 38%, #2A2319 0%, var(--color-night) 55%, var(--color-night-deep) 100%);
+  background: radial-gradient(circle at 50% 38%, 
+#2A2319 0%, var(--color-night) 55%, var(--color-night-deep) 100%);
   color: var(--color-night-text);
   padding: var(--space-6) 0 var(--space-5);
   text-align: center;
   overflow: hidden;
 }
-
 .hero-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 /* The host-and-rays visual, built entirely from CSS as a placeholder for
    a photograph of the Elevation of the Host. Swap the .host-visual block
    for an <img> if you'd like to use a real photograph instead. */
@@ -495,7 +442,6 @@ blockquote.scripture cite {
   height: clamp(180px, 28vw, 260px);
   margin-bottom: var(--space-4);
 }
-
 .host-visual::before {
   content: '';
   position: absolute;
@@ -511,26 +457,25 @@ blockquote.scripture cite {
   opacity: 0.9;
   animation: rays-turn 90s linear infinite;
 }
-
 @keyframes rays-turn {
   to { transform: rotate(360deg); }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .host-visual::before { animation: none; }
 }
-
 .host-visual::after {
   content: '';
   position: absolute;
   inset: 18%;
   border-radius: 50%;
-  background: radial-gradient(circle at 50% 42%, #FBF6EA 0%, #EFE4CC 65%, #DCCBA4 100%);
+  background: radial-gradient(circle at 50% 42%, 
+#FBF6EA 0%, 
+#EFE4CC 65%, 
+#DCCBA4 100%);
   box-shadow:
     0 0 40px 10px rgba(217, 179, 106, 0.35),
     inset 0 0 0 2px rgba(124, 36, 51, 0.18);
 }
-
 .host-visual .host-cross {
   position: absolute;
   inset: 0;
@@ -538,19 +483,16 @@ blockquote.scripture cite {
   align-items: center;
   justify-content: center;
 }
-
 .host-visual .host-cross svg {
   width: 22%;
   height: 22%;
   opacity: 0.5;
 }
-
 .hero h1 {
   font-style: italic;
   color: var(--color-night-text);
   margin-bottom: var(--space-1);
 }
-
 .hero cite {
   display: block;
   font-family: var(--font-ui);
@@ -561,63 +503,17 @@ blockquote.scripture cite {
   color: var(--color-gold-bright);
   margin-bottom: var(--space-3);
 }
-
 .hero p {
   max-width: 38rem;
   margin: 0 auto var(--space-4);
   font-size: 1.15rem;
   color: rgba(236, 227, 210, 0.88);
 }
-
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
   justify-content: center;
-}
-
-.host-visual {
-  cursor: pointer;
-}
-
-.host-visual::after {
-  z-index: 1;
-}
-
-.host-cross {
-  z-index: 0;
-}
-
-.host-spots {
-  position: absolute;
-  inset: 18%;
-  border-radius: 50%;
-  overflow: hidden;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.host-spot {
-  position: absolute;
-  background: radial-gradient(circle at 35% 30%, #9c2a2a 0%, #7c1f1f 55%, #4f1212 100%);
-  mix-blend-mode: multiply;
-  box-shadow: 0 0 4px 1px rgba(79, 18, 18, 0.35);
-  opacity: 0;
-  animation: spot-bloom 1.3s var(--ease) forwards;
-}
-
-@keyframes spot-bloom {
-  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.2); }
-  60%  { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.08); }
-  100% { opacity: 0.82; transform: translate(-50%, -50%) scale(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .host-spot {
-    animation: none;
-    opacity: 0.82;
-    transform: translate(-50%, -50%) scale(1);
-  }
 }
 /* --------------------------------------------------------------------
    8. BUTTONS
@@ -640,35 +536,29 @@ blockquote.scripture cite {
   cursor: pointer;
   transition: background 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-
 .button:hover {
   background: var(--color-gold);
   color: var(--color-night-deep);
 }
-
 .button--solid {
   background: var(--color-cardinal);
   border-color: var(--color-cardinal);
   color: #fff;
 }
-
 .button--solid:hover {
   background: var(--color-gold);
   border-color: var(--color-gold);
   color: var(--color-ink);
 }
-
 /* On light backgrounds, base button needs dark text */
 .section:not(.section--night) .button:not(.button--solid) {
   color: var(--color-ink);
   border-color: var(--color-cardinal);
 }
-
 .section:not(.section--night) .button:not(.button--solid):hover {
   background: var(--color-cardinal);
   color: #fff;
 }
-
 /* --------------------------------------------------------------------
    9. CARDS
    -------------------------------------------------------------------- */
@@ -684,30 +574,24 @@ blockquote.scripture cite {
   color: var(--color-ink);
   transition: border-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-
 .section--alt .card {
   background: var(--color-parchment);
 }
-
 a.card:hover {
   border-color: var(--color-gold);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px -16px rgba(34, 30, 25, 0.35);
 }
-
 .card h3 {
   margin-bottom: 0.25rem;
 }
-
 .card p {
   color: var(--color-ink-soft);
   font-size: 0.98rem;
 }
-
 .card .eyebrow {
   margin-bottom: 0.4rem;
 }
-
 /* Media placeholder block used wherever a photo will eventually go */
 .media-placeholder {
   position: relative;
@@ -726,10 +610,8 @@ a.card:hover {
   min-height: 160px;
   padding: var(--space-2);
 }
-
 .media-placeholder--tall { min-height: 240px; }
 .media-placeholder--wide { min-height: 320px; }
-
 /* --------------------------------------------------------------------
    10. CALLOUTS
    -------------------------------------------------------------------- */
@@ -740,16 +622,13 @@ a.card:hover {
   padding: var(--space-3);
   margin: var(--space-3) 0;
 }
-
 .callout h4 {
   margin-bottom: 0.5rem;
 }
-
 .callout--night {
   background: rgba(217, 179, 106, 0.08);
   border-left-color: var(--color-gold-bright);
 }
-
 /* --------------------------------------------------------------------
    11. TIMELINE (Early Church witnesses)
    -------------------------------------------------------------------- */
@@ -759,16 +638,13 @@ a.card:hover {
   padding-left: var(--space-4);
   border-left: 2px solid var(--color-parchment-line);
 }
-
 .timeline-item {
   position: relative;
   padding-bottom: var(--space-4);
 }
-
 .timeline-item:last-child {
   padding-bottom: 0;
 }
-
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -780,11 +656,9 @@ a.card:hover {
   background: var(--color-parchment);
   border: 2px solid var(--color-gold);
 }
-
 .timeline-item h3 {
   margin-bottom: 0.1rem;
 }
-
 .timeline-date {
   font-family: var(--font-ui);
   font-size: 0.78rem;
@@ -795,12 +669,10 @@ a.card:hover {
   display: block;
   margin-bottom: 0.5rem;
 }
-
 .timeline-item blockquote.scripture {
   font-size: 1.1rem;
   margin: 0.75rem 0;
 }
-
 /* --------------------------------------------------------------------
    12. ACCORDION (FAQ, "Go Deeper" panels, miracle entries)
    -------------------------------------------------------------------- */
@@ -811,7 +683,6 @@ details.accordion-item {
   margin-bottom: var(--space-2);
   overflow: hidden;
 }
-
 details.accordion-item > summary {
   cursor: pointer;
   list-style: none;
@@ -824,11 +695,9 @@ details.accordion-item > summary {
   justify-content: space-between;
   gap: var(--space-2);
 }
-
 details.accordion-item > summary::-webkit-details-marker {
   display: none;
 }
-
 details.accordion-item > summary::after {
   content: '+';
   font-family: var(--font-ui);
@@ -838,22 +707,18 @@ details.accordion-item > summary::after {
   flex-shrink: 0;
   transition: transform 0.2s var(--ease);
 }
-
 details.accordion-item[open] > summary::after {
   transform: rotate(45deg);
 }
-
 details.accordion-item .accordion-body {
   padding: 0 var(--space-3) var(--space-3);
   border-top: 1px solid var(--color-parchment-line);
   padding-top: var(--space-2);
   color: var(--color-ink-soft);
 }
-
 details.accordion-item .accordion-body > *:first-child {
   margin-top: 0;
 }
-
 .accordion-note {
   font-family: var(--font-ui);
   font-size: 0.8rem;
@@ -861,7 +726,6 @@ details.accordion-item .accordion-body > *:first-child {
   letter-spacing: 0.04em;
   color: var(--color-stone);
 }
-
 /* --------------------------------------------------------------------
    13. EUCHARISTIC MIRACLES — filters & cards
    -------------------------------------------------------------------- */
@@ -876,13 +740,11 @@ details.accordion-item .accordion-body > *:first-child {
   background: var(--color-parchment-deep);
   border-radius: var(--radius);
 }
-
 .filter-group {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-
 .filter-chip {
   font-family: var(--font-ui);
   font-size: 0.78rem;
@@ -897,24 +759,20 @@ details.accordion-item .accordion-body > *:first-child {
   cursor: pointer;
   transition: all 0.2s var(--ease);
 }
-
 .filter-chip:hover {
   border-color: var(--color-cardinal);
   color: var(--color-cardinal);
 }
-
 .filter-chip.is-active {
   background: var(--color-cardinal);
   border-color: var(--color-cardinal);
   color: #fff;
 }
-
 .filter-controls {
   display: flex;
   gap: 0.6rem;
   flex-wrap: wrap;
 }
-
 .field-input,
 .field-select {
   font-family: var(--font-ui);
@@ -925,52 +783,42 @@ details.accordion-item .accordion-body > *:first-child {
   background: var(--color-parchment);
   color: var(--color-ink);
 }
-
 .field-input {
   min-width: 200px;
 }
-
 .miracle-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3);
 }
-
 @media (max-width: 760px) {
   .miracle-grid { grid-template-columns: 1fr; }
 }
-
 .miracle-card {
   border: 1px solid var(--color-parchment-line);
   border-radius: var(--radius);
   background: var(--color-parchment);
   overflow: hidden;
 }
-
 .miracle-card[hidden] {
   display: none;
 }
-
 .miracle-card > summary {
   cursor: pointer;
   list-style: none;
   padding: var(--space-3);
   display: block;
 }
-
 .miracle-card > summary::-webkit-details-marker {
   display: none;
 }
-
 .miracle-card-media {
   margin: calc(-1 * var(--space-3)) calc(-1 * var(--space-3)) var(--space-2);
 }
-
 .miracle-card-media .media-placeholder {
   border-radius: 0;
   border-width: 0 0 1px 0;
 }
-
 .miracle-meta {
   font-family: var(--font-ui);
   font-size: 0.75rem;
@@ -980,16 +828,13 @@ details.accordion-item .accordion-body > *:first-child {
   color: var(--color-gold);
   margin-bottom: 0.35rem;
 }
-
 .miracle-card h3 {
   margin-bottom: 0.35rem;
 }
-
 .miracle-card .miracle-summary {
   color: var(--color-ink-soft);
   font-size: 0.97rem;
 }
-
 .miracle-card-readmore {
   display: inline-block;
   margin-top: 0.6rem;
@@ -1000,50 +845,40 @@ details.accordion-item .accordion-body > *:first-child {
   text-transform: uppercase;
   color: var(--color-cardinal);
 }
-
 .miracle-card[open] .miracle-card-readmore::after {
   content: ' (collapse)';
 }
-
 .miracle-card[open] .miracle-card-readmore::before {
   content: 'Close ';
 }
-
 .miracle-card:not([open]) .miracle-card-readmore::before {
   content: 'Read the full account ';
 }
-
 .miracle-detail {
   border-top: 1px solid var(--color-parchment-line);
   padding: var(--space-3);
   background: var(--color-parchment-deep);
 }
-
 .miracle-detail h4 {
   margin-top: var(--space-3);
 }
-
 .miracle-detail h4:first-child {
   margin-top: 0;
 }
-
 .miracle-detail dl {
   display: grid;
   grid-template-columns: max-content 1fr;
   gap: 0.3rem var(--space-2);
   margin: 0;
 }
-
 .miracle-detail dt {
   font-family: var(--font-ui);
   font-weight: 600;
   color: var(--color-stone);
 }
-
 .miracle-detail dd {
   margin: 0;
 }
-
 .miracle-empty {
   text-align: center;
   padding: var(--space-4);
@@ -1051,11 +886,9 @@ details.accordion-item .accordion-body > *:first-child {
   font-style: italic;
   display: none;
 }
-
 .miracle-empty.is-visible {
   display: block;
 }
-
 /* --------------------------------------------------------------------
    14. FOOTER
    -------------------------------------------------------------------- */
@@ -1064,7 +897,6 @@ details.accordion-item .accordion-body > *:first-child {
   color: var(--color-night-text);
   padding: var(--space-5) 0 var(--space-4);
 }
-
 .footer-inner {
   display: flex;
   flex-direction: column;
@@ -1072,7 +904,6 @@ details.accordion-item .accordion-body > *:first-child {
   text-align: center;
   gap: var(--space-3);
 }
-
 .footer-lamp {
   display: flex;
   align-items: center;
@@ -1081,14 +912,12 @@ details.accordion-item .accordion-body > *:first-child {
   font-style: italic;
   font-size: 1.1rem;
 }
-
 .footer-nav {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
   justify-content: center;
 }
-
 .footer-nav a {
   font-family: var(--font-ui);
   font-size: 0.78rem;
@@ -1098,18 +927,15 @@ details.accordion-item .accordion-body > *:first-child {
   color: rgba(236, 227, 210, 0.75);
   text-decoration: none;
 }
-
 .footer-nav a:hover {
   color: var(--color-gold-bright);
 }
-
 .footer-copy {
   font-family: var(--font-ui);
   font-size: 0.78rem;
   color: rgba(236, 227, 210, 0.5);
   margin: 0;
 }
-
 /* --------------------------------------------------------------------
    15. PAGE HEADER (non-home pages)
    -------------------------------------------------------------------- */
@@ -1119,18 +945,15 @@ details.accordion-item .accordion-body > *:first-child {
   text-align: center;
   border-bottom: 1px solid var(--color-parchment-line);
 }
-
 .page-header .eyebrow {
   color: var(--color-cardinal);
 }
-
 .page-header p {
   max-width: 42rem;
   margin: var(--space-2) auto 0;
   color: var(--color-ink-soft);
   font-size: 1.08rem;
 }
-
 /* --------------------------------------------------------------------
    16. ON-PAGE SUB-NAVIGATION (jump links)
    -------------------------------------------------------------------- */
@@ -1141,7 +964,6 @@ details.accordion-item .accordion-body > *:first-child {
   justify-content: center;
   padding: var(--space-2) 0;
 }
-
 .subnav a {
   font-family: var(--font-ui);
   font-size: 0.78rem;
@@ -1153,47 +975,38 @@ details.accordion-item .accordion-body > *:first-child {
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
 }
-
 .subnav a:hover {
   color: var(--color-cardinal);
   border-bottom-color: var(--color-gold);
 }
-
 /* --------------------------------------------------------------------
    17. MISC HELPERS
    -------------------------------------------------------------------- */
 .text-center { text-align: center; }
-
 .stack {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
-
 .list-clean {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-
 .list-clean li {
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--color-parchment-line);
 }
-
 .list-clean li:last-child {
   border-bottom: none;
 }
-
 ol.steps {
   margin: 0;
   padding-left: 1.4rem;
 }
-
 ol.steps li {
   margin-bottom: 0.6rem;
 }
-
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -1202,7 +1015,6 @@ ol.steps li {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
-
 @media (max-width: 600px) {
   .section { padding: var(--space-5) 0; }
   .hero { padding: var(--space-5) 0 var(--space-4); }
@@ -1214,16 +1026,20 @@ ol.steps li {
    Variables are prefixed --miracle- so they won't collide with
    anything you already have defined in :root.
    ============================================================ */
-
 :root{
-  --miracle-ink-soft: #5b5048;
-  --miracle-parchment-deep: #eee3c9;
-  --miracle-hairline: #ddd0b4;
-  --miracle-gold: #a8793a;
-  --miracle-wine: #7a2a30;
-  --miracle-card-bg: #fffdf9;
+  --miracle-ink-soft: 
+#5b5048;
+  --miracle-parchment-deep: 
+#eee3c9;
+  --miracle-hairline: 
+#ddd0b4;
+  --miracle-gold: 
+#a8793a;
+  --miracle-wine: 
+#7a2a30;
+  --miracle-card-bg: 
+#fffdf9;
 }
-
 .miracle-toolbar{
   display:flex; flex-direction:column; gap:16px; margin-bottom:44px;
 }
@@ -1233,14 +1049,12 @@ ol.steps li {
   background:var(--miracle-card-bg); color:inherit;
 }
 .miracle-search:focus{ outline:2px solid var(--miracle-gold); outline-offset:1px; }
-
 .country-jump{
   font-family:'Inter',sans-serif; font-size:13px; line-height:2; color:var(--miracle-ink-soft);
 }
 .country-jump a{ color:var(--miracle-wine); text-decoration:none; }
 .country-jump a:hover, .country-jump a:focus-visible{ text-decoration:underline; }
 .country-jump .sep{ color:var(--miracle-hairline); margin:0 2px; }
-
 .country-section{ margin-bottom:58px; scroll-margin-top:24px; }
 .country-heading{
   display:flex; align-items:baseline; gap:14px; margin-bottom:22px;
@@ -1254,7 +1068,6 @@ ol.steps li {
   font-family:'Inter',sans-serif; font-size:12.5px; letter-spacing:.04em;
   text-transform:uppercase; color:var(--miracle-gold); white-space:nowrap;
 }
-
 .miracle-grid{
   display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:22px;
 }
@@ -1281,11 +1094,9 @@ ol.steps li {
 .miracle-card-link--empty{
   font-family:'Inter',sans-serif; font-size:.85rem; font-weight:500; font-style:italic; color:var(--miracle-ink-soft);
 }
-
 .miracle-empty{
   display:none; font-family:'Inter',sans-serif; color:var(--miracle-ink-soft); padding:40px 0; text-align:center;
 }
-
 @media (max-width:560px){
   .country-heading{ flex-wrap:wrap; }
 }

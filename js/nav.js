@@ -4,11 +4,9 @@
    Edit the SITE_NAME, NAV_LINKS, or footer markup here ONCE and every
    page picks up the change automatically.
    ========================================================================== */
-
 (function () {
   var SITE_NAME = "Adoremus"; // change the site name/wordmark here
   var SITE_TAGLINE = "The Real Presence of Christ";
-
   var NAV_LINKS = [
     { href: "index.html", label: "Home" },
     { href: "about-eucharist.html", label: "About the Eucharist" },
@@ -18,12 +16,10 @@
     { href: "questions-objections.html", label: "Questions & Objections" },
     { href: "beauty-tradition.html", label: "Beauty & Tradition" }
   ];
-
   function currentFile() {
     var path = window.location.pathname.split("/").pop();
     return path === "" ? "index.html" : path;
   }
-
   function buildHeader() {
     var current = currentFile();
     var links = NAV_LINKS.map(function (link) {
@@ -34,7 +30,6 @@
         '>' + link.label + '</a></li>'
       );
     }).join("");
-
     return (
       '<div class="container header-inner">' +
         '<a href="index.html" class="wordmark">' +
@@ -50,12 +45,10 @@
       '</div>'
     );
   }
-
   function buildFooter() {
     var links = NAV_LINKS.map(function (link) {
       return '<a href="' + link.href + '">' + link.label + '</a>';
     }).join("");
-
     return (
       '<div class="container footer-inner">' +
         '<div class="footer-lamp">' +
@@ -68,15 +61,12 @@
       '</div>'
     );
   }
-
   document.addEventListener("DOMContentLoaded", function () {
     var headerMount = document.getElementById("site-header");
     var footerMount = document.getElementById("site-footer");
-
     if (headerMount) {
       headerMount.innerHTML = buildHeader();
       headerMount.classList.add("site-header");
-
       var toggle = headerMount.querySelector(".nav-toggle");
       var nav = headerMount.querySelector(".site-nav");
       if (toggle && nav) {
@@ -87,7 +77,6 @@
         });
       }
     }
-
     if (footerMount) {
       footerMount.innerHTML = buildFooter();
       footerMount.classList.add("site-footer");
