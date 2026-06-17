@@ -576,6 +576,49 @@ blockquote.scripture cite {
   justify-content: center;
 }
 
+.host-visual {
+  cursor: pointer;
+}
+
+.host-visual::after {
+  z-index: 1;
+}
+
+.host-cross {
+  z-index: 0;
+}
+
+.host-spots {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.host-spot {
+  position: absolute;
+  background: radial-gradient(circle at 35% 30%, #9c2a2a 0%, #7c1f1f 55%, #4f1212 100%);
+  mix-blend-mode: multiply;
+  box-shadow: 0 0 4px 1px rgba(79, 18, 18, 0.35);
+  opacity: 0;
+  animation: spot-bloom 1.3s var(--ease) forwards;
+}
+
+@keyframes spot-bloom {
+  0%   { opacity: 0;    transform: translate(-50%, -50%) scale(0.2); }
+  60%  { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.08); }
+  100% { opacity: 0.82; transform: translate(-50%, -50%) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .host-spot {
+    animation: none;
+    opacity: 0.82;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 /* --------------------------------------------------------------------
    8. BUTTONS
    -------------------------------------------------------------------- */
