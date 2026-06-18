@@ -1104,9 +1104,12 @@ ol.steps li {
 .hardest-teaching {
   background-color: var(--color-night);
   color: var(--color-night-text);
-  border-radius: var(--radius);
-  padding: var(--space-4) var(--space-3);
   margin: var(--space-4) 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  padding: var(--space-4) max(var(--space-3), calc((100vw - var(--container)) / 2 + var(--space-3)));
 }
 .hardest-teaching h3 {
   color: var(--color-night-text);
