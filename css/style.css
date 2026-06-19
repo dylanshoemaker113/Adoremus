@@ -1145,7 +1145,7 @@ ol.steps li {
 }
 
 .receive-permitted-badge {
-  display: inline-block;
+  width: fit-content; /* was display: inline-block */
   font-size: 11px;
   border: 1px solid currentColor;
   opacity: .5;
