@@ -1,3 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eucharistic Miracles | Adoremus</title>
+  <meta name="description" content="A register of Church-investigated Eucharistic miracles from around the world, organized by country.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- All styles for this page (including the new miracle browser) live in css/style.css.
+       See miracle-browser-styles.css for the block to paste in there. -->
+</head>
+<body>
+
+  <div id="site-header"></div>
+
+  <main>
+
+    <header class="page-header">
+      <div class="container">
+        <span class="eyebrow">Eucharistic Miracles</span>
+        <h1>When the Invisible is Made Visible</h1>
+        <p>
+          Eucharistic miracles are extraordinary signs that the Church
+          believes God occasionally permits to reveal in an observable way that He truly is present in the Eucharist. In most of these events,
+          it is not only the substance that changes &mdash; as Catholics
+          believe happens at every Mass &mdash; but the
+          <em>appearance</em> as well: ordinary bread and wine become,
+          <b>visibly</b>, flesh and blood.
+        </p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="miracle-toolbar">
+          <input type="search" id="miracle-search" class="miracle-search" placeholder="Search by country or location…" aria-label="Search miracles">
+          <nav class="country-jump" id="country-jump" aria-label="Jump to country"></nav>
+        </div>
+
+        <div id="miracle-list"></div>
+
+        <p class="miracle-empty" id="miracle-empty">No miracles match your search.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/nav.js"></script>
+
+  <script>
+    /* ============================================================
+       FILL THIS OUT
+       Location and year are already filled in for every miracle on
+       your list. For each one, add what you have to:
+         description — a sentence or two about what happened
+         image       — a path or URL to a photo (e.g. "images/lanciano.jpg")
+         link         — the URL of your full article on this miracle
+       Leave any field as "" and the card will show a placeholder
+       instead, so you can fill these out gradually.
+       ============================================================ */
 const miracleCountries = [
       { country: "Argentina", entries: [
         { location: "Buenos Aires", year: "1992–1994–1996", description: "3 instances (1992,1994,1996) of Eucharistic Miracles have occurred in a parish in Buenos Aires, Argentina. Each involved a found consecrated host that was dissolved for disposal (norm in the Church). In the 1996 miracle, the host started bleeding and turned to flesh. When investigated in a blind analysis in 1999, these fragments were discovered to be human heart tissue.", image: "https://i.ytimg.com/vi/wXLfwdw2yUk/mqdefault.jpg", link: "https://www.ncregister.com/features/three-eucharistic-miracles-which-cases-have-undergone-the-most-extensive-scientific-analysis" }
@@ -147,3 +214,80 @@ const miracleCountries = [
         { location: "Betania", year: "1991", description: "", image: "", link: "" }
       ]}
     ];
+    
+   function slugify(str){
+      return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
+    }
+
+    function cardHTML(country, entry){
+      const desc = entry.description && entry.description.trim() !== ''
+        ? entry.description
+        : 'Add a short description of what happened here.';
+      const hasImg = entry.image && entry.image.trim() !== '';
+      const hasLink = entry.link && entry.link.trim() !== '';
+      const searchKey = (country + ' ' + entry.location).toLowerCase();
+
+      return `
+        <article class="miracle-card" data-search="${searchKey}">
+          <div class="miracle-card-image"${hasImg ? ` style="background-image:url('${entry.image}')"` : ''}>
+            ${hasImg ? '' : '<span>Add photo</span>'}
+          </div>
+          <div class="miracle-card-body">
+            <p class="miracle-card-meta">${country} · ${entry.year}</p>
+            <h3>${entry.location}</h3>
+            <p class="miracle-card-desc">${desc}</p>
+            ${hasLink
+              ? `<a class="miracle-card-link" href="${entry.link}" target="_blank" rel="noopener">Read the full article →</a>`
+              : `<span class="miracle-card-link miracle-card-link--empty">Add a link to the full article</span>`}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderMiracles(data){
+      const root = document.getElementById('miracle-list');
+      root.innerHTML = data.map(country => `
+        <section class="country-section" id="${slugify(country.country)}">
+          <div class="country-heading">
+            <h2>${country.country}</h2>
+            <span class="country-count">${country.entries.length} miracle${country.entries.length > 1 ? 's' : ''}</span>
+          </div>
+          <div class="miracle-grid">
+            ${country.entries.map(e => cardHTML(country.country, e)).join('')}
+          </div>
+        </section>
+      `).join('');
+    }
+
+    function renderJumpNav(data){
+      const nav = document.getElementById('country-jump');
+      nav.innerHTML = data
+        .map(c => `<a href="#${slugify(c.country)}">${c.country}</a>`)
+        .join('<span class="sep" aria-hidden="true">·</span>');
+    }
+
+    renderMiracles(miracleCountries);
+    renderJumpNav(miracleCountries);
+
+    document.getElementById('miracle-search').addEventListener('input', e => {
+      const q = e.target.value.trim().toLowerCase();
+      let anyVisible = false;
+
+      document.querySelectorAll('.country-section').forEach(section => {
+        let sectionHasVisible = false;
+        section.querySelectorAll('.miracle-card').forEach(card => {
+          const match = card.dataset.search.includes(q);
+          card.style.display = match ? '' : 'none';
+          if (match) sectionHasVisible = true;
+        });
+        section.style.display = sectionHasVisible ? '' : 'none';
+        if (sectionHasVisible) anyVisible = true;
+      });
+
+      document.getElementById('miracle-empty').style.display = anyVisible ? 'none' : 'block';
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
