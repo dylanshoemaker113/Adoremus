@@ -1,72 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eucharistic Miracles | Adoremus</title>
-  <meta name="description" content="A register of Church-investigated Eucharistic miracles from around the world, organized by country.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- All styles for this page (including the new miracle browser) live in css/style.css.
-       See miracle-browser-styles.css for the block to paste in there. -->
-</head>
-<body>
-
-  <div id="site-header"></div>
-
-  <main>
-
-    <header class="page-header">
-      <div class="container">
-        <span class="eyebrow">Eucharistic Miracles</span>
-        <h1>When the Invisible is Made Visible</h1>
-        <p>
-          Eucharistic miracles are extraordinary signs that the Church
-          believes God occasionally permits to reveal in an observable way that He truly is present in the Eucharist. In most of these events,
-          it is not only the substance that changes &mdash; as Catholics
-          believe happens at every Mass &mdash; but the
-          <em>appearance</em> as well: ordinary bread and wine become,
-          <b>visibly</b>, flesh and blood.
-        </p>
-      </div>
-    </header>
-
-    <section class="section">
-      <div class="container">
-
-        <div class="miracle-toolbar">
-          <input type="search" id="miracle-search" class="miracle-search" placeholder="Search by country or location…" aria-label="Search miracles">
-          <nav class="country-jump" id="country-jump" aria-label="Jump to country"></nav>
-        </div>
-
-        <div id="miracle-list"></div>
-
-        <p class="miracle-empty" id="miracle-empty">No miracles match your search.</p>
-
-      </div>
-    </section>
-
-  </main>
-
-  <div id="site-footer"></div>
-
-  <script src="js/nav.js"></script>
-
-  <script>
-    /* ============================================================
-       FILL THIS OUT
-       Location and year are already filled in for every miracle on
-       your list. For each one, add what you have to:
-         description — a sentence or two about what happened
-         image       — a path or URL to a photo (e.g. "images/lanciano.jpg")
-         link         — the URL of your full article on this miracle
-       Leave any field as "" and the card will show a placeholder
-       instead, so you can fill these out gradually.
-       ============================================================ */
-
-    const miracleCountries = [
+const miracleCountries = [
       { country: "Argentina", entries: [
         { location: "Buenos Aires", year: "1992–1994–1996", description: "3 instances (1992,1994,1996) of Eucharistic Miracles have occurred in a parish in Buenos Aires, Argentina. Each involved a found consecrated host that was dissolved for disposal (norm in the Church). In the 1996 miracle, the host started bleeding and turned to flesh. When investigated in a blind analysis in 1999, these fragments were discovered to be human heart tissue.", image: "https://i.ytimg.com/vi/wXLfwdw2yUk/mqdefault.jpg", link: "https://www.ncregister.com/features/three-eucharistic-miracles-which-cases-have-undergone-the-most-extensive-scientific-analysis" }
       ]},
@@ -78,217 +10,140 @@
       { country: "Belgium", entries: [
         { location: "Bois-Seigneur-Isaac", year: "1405", description: "Starting on the Tuesday before Pentecost, John of Huldenberg experienced a vision in which the crucified and bleeding Christ appeared to him. On the third and final apparition, the Lord directed him, 'Go into the Chapel of Isaac, you will find Me there.' Simultaneously, the local priest, Father Peter Ost, experienced a similar vision telling him to celebrate Mass at the nearby Chapel. During the Mass, attended by John of Huldenberg, as the priest unfolded the corporal cloth, he discovered a bleeding fragment of a Host. The blood continued to flow for four days, staining the altar cloth, which still bears visible traces of human blood.", image: "https://cdn.phototourl.com/free/2026-06-18-01754d5c-0f53-4453-9add-38151d7ef360.png", link: "https://www.miracolieucaristici.org/en/Liste/scheda.html?nat=belgio&wh=boisseigneurisaac&ct=Bois-Seigneur-Isaac,%201405" },
         { location: "Brussels", year: "1370", description: "In 1370, a group of desacrators stabbed stolen Eucharistic hosts to inflict pain on Catholics. Upon their pierces, blood flowed from the hosts, leaving the desacrators shocked and in grief.", image: "https://wp.en.aleteia.org/wp-content/uploads/sites/2/2018/02/web3-brussels-miracle-host-desecration-wolfgang-sauber-cc-by-sa-3-0.jpg", link: "https://aleteia.org/2018/02/08/when-thieves-stabbed-the-eucharist-they-never-expected-this-to-happen/" },
-        { location: "Herentals", year: "1412", description: "", image: "", link: "" },
-        { location: "Herkenrode-Hasselt", year: "1317", description: "", image: "", link: "" },
-        { location: "Liège", year: "1374", description: "", image: "", link: "" },
-        { location: "Middleburg-Lovanio", year: "1374", description: "", image: "", link: "" }
+        { location: "Herentals", year: "1412", description: "A man who made his living stealing sacred objects from churches broke into a chapel in nearby Poederlee and made off with a chalice and ciborium holding five consecrated hosts. Overcome by an unseen force on the road, he hid the hosts in a rabbit burrow in a field before continuing on. He was later arrested for the theft, and under questioning revealed where he had hidden the hosts. When searchers reached the field eight days later, the hosts were found perfectly intact despite the rain, glowing with light and arranged in the shape of a cross.", image: "", link: "" },
+        { location: "Herkenrode-Hasselt", year: "1317", description: "A priest from Viversel was carrying a consecrated host in his bag to bring Communion to a dying parishioner. While he was inside hearing the man's confession, a curious relative opened the bag, touched the host, and immediately it began to bleed. The shaken priest brought the bleeding host to the nearby Cistercian convent of Herkenrode, where the assembled nuns and clergy all witnessed the image of Christ crowned with thorns appear on its surface. The relic is still venerated today in the Cathedral of St. Quintinus in Hasselt.", image: "", link: "" },
+        { location: "Liège", year: "1374", description: "This date is included among the Eucharistic Miracles not for a single transformed host, but to honor the Eucharistic devotion of Blessed Juliana of Cornillon (Juliana of Liège), whose visions of Christ in the Eucharist led the local bishop to introduce the Feast of Corpus Christi at Liège, later extended to the whole Church by Pope Urban IV in 1264. Urban IV had served as archdeacon of Liège and was deeply moved by Juliana's witness before becoming pope.", image: "", link: "" },
+        { location: "Middleburg-Lovanio", year: "1374", description: "A devout noblewoman in Middleburg invited her household staff to Lenten Mass, including a newly hired servant named Jan who had not been to confession in years. Approaching Communion half-heartedly, Jan received the host on his tongue, and it immediately changed into bleeding flesh, with blood dripping from his mouth onto the altar rail. A portion of the relic is kept today by Augustinian Fathers in Louvain, and the remainder is preserved in St. Peter's Church in Middleburg.", image: "", link: "" }
       ]},
       { country: "Colombia", entries: [
-        { location: "Tumaco", year: "1906", description: "", image: "", link: "" }
+        { location: "Tumaco", year: "1906", description: "In 1906, an undersea earthquake off Colombia's Pacific coast sent a massive tsunami crashing into the port towns of the region, destroying everything in its path. The small island of Tumaco, however, was spared the devastation; local Catholics attributed this to their faith and to Father Gerardo Larrondo's blessing of the town with the Blessed Sacrament as the wave approached.", image: "", link: "" }
       ]},
       { country: "Croatia", entries: [
-        { location: "Ludbreg", year: "1411", description: "", image: "", link: "" }
+        { location: "Ludbreg", year: "1411", description: "While celebrating Mass in the chapel of Count Batthyány's castle in 1411, a priest was overcome with doubt about the truth of transubstantiation. At the moment of consecration, the wine in the chalice turned into visible blood. Too ashamed to report what had happened, the priest had the relic sealed into the chapel wall and revealed the secret only on his deathbed; the Precious Blood, still intact, has drawn pilgrims to Ludbreg ever since.", image: "", link: "" }
       ]},
       { country: "Egypt", entries: [
-        { location: "St. Mary of Egypt", year: "IV–V cent.", description: "", image: "", link: "" },
-        { location: "Scete", year: "III–V cent.", description: "", image: "", link: "" }
+        { location: "St. Mary of Egypt", year: "IV–V cent.", description: "According to the account written by Bishop Sophronius of Jerusalem, Mary of Egypt spent nearly five decades alone in the desert after a dramatic conversion. Near the end of her life, she met the monk Zosimas and asked him to bring her Communion the following year; when he returned to the bank of the Jordan River, she crossed the water on foot to receive the Eucharist for the first time in 47 years. When Zosimas returned again a year later, he found that she had died, apparently on the very night she had received Communion.", image: "", link: "" },
+        { location: "Scete", year: "III–V cent.", description: "Among the sayings of the Desert Fathers is the account of a monk who privately doubted whether Christ was truly present in the consecrated bread and wine at Mass. As he received Communion, the bread appeared to him as the Christ Child rather than ordinary bread; three companion monks who were present witnessed the same vision, confirming his shaken faith.", image: "", link: "" }
       ]},
       { country: "France", entries: [
-        { location: "Avignon", year: "1433", description: "", image: "", link: "" },
-        { location: "Blanot", year: "1331", description: "", image: "", link: "" },
-        { location: "Bordeaux", year: "1822", description: "", image: "", link: "" },
-        { location: "Dijon", year: "1430", description: "", image: "", link: "" },
-        { location: "Douai", year: "1254", description: "", image: "", link: "" },
-        { location: "Faverney", year: "1608", description: "", image: "", link: "" },
-        { location: "La Rochelle", year: "1461", description: "", image: "", link: "" },
-        { location: "Neuvy Saint Sepulcre", year: "1257", description: "", image: "", link: "" },
-        { location: "Les Ulmes", year: "1668", description: "", image: "", link: "" },
-        { location: "Marseille-En-Beauvais", year: "1533", description: "", image: "", link: "" },
-        { location: "Paris", year: "1290", description: "", image: "", link: "" },
-        { location: "Pressac", year: "1643", description: "", image: "", link: "" }
+        { location: "Avignon", year: "1433", description: "After days of relentless rain, the rivers around Avignon overflowed and the city flooded. Two friars worried for a consecrated host that had been left exposed for adoration rowed by boat to the small church and found, on entering, that the floodwaters had parted to leave a dry path from the door to the altar where the Blessed Sacrament remained untouched.", image: "", link: "" },
+        { location: "Blanot", year: "1331", description: "During Easter Mass in 1331, a host fell from the mouth of a woman named Jacquette as she received Communion and landed on the cloth held beneath her chin. The priest tried repeatedly to lift it but could not, and the host slowly dissolved into a stain of blood the same size and shape as the original host. The stained cloth is still preserved in the village of Blanot.", image: "", link: "" },
+        { location: "Bordeaux", year: "1822", description: "During Mass on February 3, 1822, the faithful gathered for adoration reported seeing Christ visibly appear within the exposed host, giving a blessing that lasted more than twenty minutes. The monstrance from the apparition is still venerated today at the chapel of La Solitude in Martillac, near Bordeaux.", image: "", link: "" },
+        { location: "Dijon", year: "1430", description: "A woman in Dijon purchased a monstrance at market without realizing a consecrated host remained inside it. When she used a knife to pry the host loose, it began to bleed; the blood dried on the spot into an image of the Lord seated on a throne, holding instruments of the Passion.", image: "", link: "" },
+        { location: "Douai", year: "1254", description: "While distributing Communion, a priest accidentally dropped a consecrated host to the floor of the church. As he bent to retrieve it, the host rose into the air on its own and settled gently onto the purificator cloth, and witnesses present reported seeing the figure of a child appear briefly above it. The faithful of Douai have gathered before the relic in prayer every Thursday for centuries since.", image: "", link: "" },
+        { location: "Faverney", year: "1608", description: "On the night of May 24, 1608, a fire broke out on the altar where a monstrance holding the Blessed Sacrament had been left exposed after a feast-day procession at the Benedictine abbey of Faverney. When the monks rushed in the next morning expecting to find the altar destroyed, they instead found the monstrance suspended in mid-air above the ashes, with no support beneath it. It remained visibly hovering for some 33 hours, witnessed by more than a thousand people who flocked to the abbey, until a monk was finally able to take it down during a special Mass.", image: "", link: "" },
+        { location: "La Rochelle", year: "1461", description: "On Easter Sunday in 1461, a mother brought her twelve-year-old son Bertrand, who had been paralyzed and unable to speak since the age of seven, to the Mass of the Resurrection at the church of Saint-Barthélemy in La Rochelle. The moment the boy received Holy Communion, he was instantly healed of both afflictions.", image: "", link: "" },
+        { location: "Neuvy Saint Sepulcre", year: "1257", description: "Two drops of blood said to have been collected at the foot of the cross during Christ's Passion were brought back to France in 1257 by Cardinal Eudes de Châteauroux, returning from the Holy Land. They have been preserved and venerated ever since in the church of Neuvy-Saint-Sépulcre in the Indre region.", image: "", link: "" },
+        { location: "Les Ulmes", year: "1668", description: "During a public exposition of the Blessed Sacrament on June 2, 1668, witnesses reported that in place of the host there appeared the figure of a man with light brown hair, a luminous face, his hands crossed over his chest, and a white tunic, visible for roughly fifteen minutes. After examining the testimony, the local bishop authorized devotion to the miracle, and the recess in the church that held the host for over a century can still be seen today.", image: "", link: "" },
+        { location: "Marseille-En-Beauvais", year: "1533", description: "Thieves who stole consecrated hosts from a church abandoned them under a rock during a snowstorm in 1533. When the hosts were later found, they were in perfect condition, and witnesses noted that no snow had touched the rock that sheltered them even as snow blanketed everything around it.", image: "", link: "" },
+        { location: "Paris", year: "1290", description: "On Easter in 1290, a man hostile to the Catholic faith obtained a consecrated host with the intent of desecrating it. He stabbed the host with a knife and, when it bled, threw it into boiling water; the host rose unharmed out of the water in front of him. Terrified, he passed it to a pious woman, who returned it to her pastor, and the relic was venerated in Paris for centuries until it was lost during the French Revolution.", image: "", link: "" },
+        { location: "Pressac", year: "1643", description: "On Holy Thursday in 1643, candles left burning after Mass sparked a fire near the altar of the parish church. The blaze melted the communion chalice entirely except for its base, and when the ashes were cleared, the consecrated host was found completely unharmed beneath a small bubble of melted metal. It was consumed the following day, during the Good Friday liturgy.", image: "", link: "" }
       ]},
       { country: "Germany", entries: [
-        { location: "Augsburg", year: "1194", description: "", image: "", link: "" },
-        { location: "Benningen", year: "1216", description: "", image: "", link: "" },
-        { location: "Bettbrunn", year: "1125", description: "", image: "", link: "" },
-        { location: "Erding", year: "1417", description: "", image: "", link: "" },
-        { location: "Kranenburg", year: "1280", description: "", image: "", link: "" },
-        { location: "Regensburg", year: "1255", description: "", image: "", link: "" },
-        { location: "Walldürn", year: "1330", description: "", image: "", link: "" },
-        { location: "Wilsnack", year: "1383", description: "", image: "", link: "" }
+        { location: "Augsburg", year: "1194", description: "A consecrated host stolen from an Augsburg church was found to have transformed into bleeding flesh, an event remembered locally as the 'Wunderbarlichen Gutes,' or 'Miraculous Good.' Over the following centuries, several scientific examinations of the preserved relic confirmed the presence of human flesh and blood, and the site is cared for today by Dominican friars at the Convent of the Holy Cross.", image: "", link: "" },
+        { location: "Benningen", year: "1216", description: "In 1216, a consecrated host in the village of Benningen began to bleed. Word of the miracle spread, and within a few years the townspeople built a chapel, the Riedkapelle zum Hochwürdigen Gut, to house the relic, which continues to draw an annual Corpus Christi procession to this day.", image: "", link: "" },
+        { location: "Bettbrunn", year: "1125", description: "A devout farmer who lived too far from his parish church to attend Mass regularly took to secretly carrying a consecrated host home in the hollowed top of his walking stick so he could kneel in adoration while tending his livestock. One day he accidentally dropped the host to the ground, and no one, including the local priest, was able to lift it back up. Only when the Bishop of Regensburg arrived and vowed to build a church on the spot was he able to retrieve the host; the village of Bettbrunn and its Church of the Holy Savior grew up around that promise.", image: "", link: "" },
+        { location: "Erding", year: "1417", description: "During Mass in 1417, a consecrated host visibly began to bleed in full view of the congregation, an event the faithful took as a public confirmation of Christ's Real Presence in the Eucharist.", image: "", link: "" },
+        { location: "Kranenburg", year: "1280", description: "A shepherd who was too ill to swallow a consecrated host he had received left it near a tree rather than risk dropping it irreverently. Later, when the tree was cut down, a perfectly carved crucifix was found inside the trunk where the host had rested; a church was built on the site and still stands today.", image: "", link: "" },
+        { location: "Regensburg", year: "1255", description: "A priest in Regensburg was assailed by doubts about the Real Presence of Christ in the Eucharist during Mass. As he elevated the chalice, the wooden crucifix mounted above the tabernacle came to life, and the figure of the Lord reached out, took the chalice from the priest's hands, and held the Eucharist up for the adoration of the stunned congregation.", image: "", link: "" },
+        { location: "Walldürn", year: "1330", description: "During Mass in 1330, a priest accidentally spilled the consecrated wine onto the corporal cloth on the altar. The spilled wine dried into a detailed image of the crucified Christ, and the relic, preserved on a side altar at the basilica of Saint George in Walldürn, draws thousands of pilgrims each year.", image: "", link: "" },
+        { location: "Wilsnack", year: "1383", description: "In 1383, a fire set during a local feud destroyed the village church of Wilsnack along with everything inside it. When the ruins were searched afterward, three consecrated hosts were found intact among the ashes, each marked with drops of blood. The relics made Wilsnack one of the most important pilgrimage destinations in medieval Europe until the hosts were destroyed by Reformation authorities in 1552." , image: "", link: "" }
       ]},
       { country: "India", entries: [
-        { location: "Chirattakonam", year: "2001", description: "", image: "", link: "" }
+        { location: "Chirattakonam", year: "2001", description: "During an annual novena to St. Jude Thaddeus, small dots began to appear on a consecrated host that had been placed in a monstrance for adoration. Over the following week, the marks gradually developed into an image resembling the face of Christ crowned with thorns, growing clearer on the day the Gospel passage about Doubting Thomas was read.", image: "", link: "" }
       ]},
       { country: "Martinique", entries: [
-        { location: "Morne-Rouge", year: "1902", description: "", image: "", link: "" }
+        { location: "Morne-Rouge", year: "1902", description: "On May 8, 1902, Mount Pelée erupted violently, sending a wall of lava and ash that obliterated the nearby city of Saint-Pierre. The village of Morne-Rouge, situated between Saint-Pierre and the volcano, was mysteriously spared; witnesses present at the time reported that Jesus and his Sacred Heart appeared within a host that was exposed for Eucharistic adoration as the disaster unfolded.", image: "", link: "" }
       ]},
       { country: "Réunion Island", entries: [
-        { location: "Saint-André de la Réunion", year: "1902", description: "", image: "", link: "" }
+        { location: "Saint-André de la Réunion", year: "1902", description: "On January 26, 1902, the pastor of the parish church of Saint-André on the French island of La Réunion witnessed the face of Jesus appear in the consecrated host during Mass. Thousands of the faithful reportedly saw the same apparition over the following hours, and the pastor later recounted the event publicly at the Eucharistic Congress of Angoulême in 1904.", image: "", link: "" }
       ]},
       { country: "Italy", entries: [
-        { location: "Alatri", year: "1228", description: "", image: "", link: "" },
-        { location: "Assisi (St. Clare)", year: "1240", description: "", image: "", link: "" },
-        { location: "Asti", year: "1535", description: "", image: "", link: "" },
-        { location: "Bagno di Romagna", year: "1412", description: "", image: "", link: "" },
-        { location: "Bolsena", year: "1264", description: "", image: "", link: "" },
-        { location: "Canosio", year: "1630", description: "", image: "", link: "" },
-        { location: "Cascia", year: "1330", description: "", image: "", link: "" },
-        { location: "Cava dei Tirreni", year: "1656", description: "", image: "", link: "" },
-        { location: "Dronero", year: "1631", description: "", image: "", link: "" },
-        { location: "San Mauro La Bruca", year: "1969", description: "", image: "", link: "" },
-        { location: "Ferrara", year: "1171", description: "", image: "", link: "" },
-        { location: "Florence", year: "1230", description: "", image: "", link: "" },
-        { location: "Florence", year: "1595", description: "", image: "", link: "" },
-        { location: "Gruaro (Valvasone)", year: "1294", description: "", image: "", link: "" },
+        { location: "Alatri", year: "1228", description: "A young woman, hoping to win back her sweetheart, consulted a sorceress who told her that a consecrated host was needed for a love potion. She managed to hide a host during Mass and bring it home, only to find that it had transformed into bleeding flesh. The relic, extensively documented and examined under Pope Gregory IX, is still kept in Alatri's Cathedral of Saint Paul the Apostle.", image: "", link: "" },
+        { location: "Assisi (St. Clare)", year: "1240", description: "In 1240, Saracen mercenaries in the service of Emperor Frederick II attacked Assisi and scaled the walls of the convent of San Damiano, where Saint Clare lay gravely ill. Though weak, Clare had herself carried to the entrance, took up the pyx holding the Blessed Sacrament, and held it before the advancing soldiers in prayer. The attackers, seized with sudden terror, fled the convent, and Assisi was spared.", image: "", link: "" },
+        { location: "Asti", year: "1535", description: "On July 25, 1535, blood was seen gushing from a consecrated host during Mass in Asti, witnessed by the gathered congregation. Pope Paul III later granted plenary indulgences in connection with the miracle.", image: "", link: "" },
+        { location: "Bagno di Romagna", year: "1412", description: "A priest beset by doubts about the Real Presence watched the consecrated wine in his chalice transform into visibly living blood, which flowed out onto the corporal during Mass. Scientific testing of the preserved relic in 1958 confirmed the presence of human blood.", image: "", link: "" },
+        { location: "Bolsena", year: "1264", description: "While on pilgrimage to Rome in 1263, the German priest Peter of Prague stopped to celebrate Mass at Bolsena while privately struggling with doubts about transubstantiation. At the moment of consecration, blood began seeping from the host, staining the corporal beneath it. The event, investigated by Pope Urban IV (who was residing nearby in Orvieto), helped prompt the Pope to extend the feast of Corpus Christi to the entire Church the following year.", image: "", link: "" },
+        { location: "Canosio", year: "1630", description: "In 1630, Father Antonio Reinardi confronted a catastrophic flood threatening to destroy the village of Canosio by carrying the Blessed Sacrament to the rising waters and blessing them. The flood subsided, sparing the town.", image: "", link: "" },
+        { location: "Cascia", year: "1330", description: "A priest was summoned to bring Communion to a dying peasant but, out of carelessness, tucked the consecrated host inside his prayer book instead of carrying it properly in a ciborium. When he opened the book at the man's bedside, he found the host had transformed into a clot of blood that had stained the pages, which are preserved at Cascia to this day.", image: "", link: "" },
+        { location: "Cava dei Tirreni", year: "1656", description: "During a devastating outbreak of plague in May 1656, Father Paolo Franco led a procession through the city of Cava dei Tirreni, blessing the streets with the Blessed Sacrament. The epidemic stopped soon afterward, and the town has commemorated the event annually ever since.", image: "", link: "" },
+        { location: "Dronero", year: "1631", description: "On August 3, 1631, a fierce fire threatened to consume the town of Dronero. A Capuchin friar carried the Blessed Sacrament out to confront the blaze and blessed it, after which the fire was extinguished.", image: "", link: "" },
+        { location: "San Mauro La Bruca", year: "1969", description: "On July 25, 1969, consecrated hosts that had been stolen and deliberately desecrated were recovered in the town of San Mauro La Bruca. Despite the abuse they had suffered, the hosts have shown no sign of decay in the more than fifty years since.", image: "", link: "" },
+        { location: "Ferrara", year: "1171", description: "While celebrating Easter Mass on March 28, 1171, in the Basilica of Saint Mary in Vado, the prior Father Pietro da Verona reached the moment of breaking the consecrated host and saw blood gush from it, splattering the ceiling of the crypt above the altar. The bloodstained ceiling, enclosed within a small shrine since 1595, remains visible in the basilica today.", image: "", link: "" },
+        { location: "Florence", year: "1230", description: "On December 30, 1230, an elderly priest named Uguccione neglected to clean his chalice after celebrating Mass at the Church of Saint Ambrose. The next day he discovered the remaining drops of consecrated wine had coagulated into living blood, which was placed in a crystal vial and shown to the bishop, clergy, and townspeople.", image: "", link: "" },
+        { location: "Florence", year: "1595", description: "On Good Friday in 1595, a fire broke out near a side altar of the Church of Saint Ambrose, the same church that had held the 1230 miracle. As worshippers rushed to save the Blessed Sacrament from the flames, six consecrated hosts fell to the floor and were later found fused together as one, completely unharmed by the fire. Archbishop Marzio Medici of Florence examined the hosts in 1628 and found them still incorrupt.", image: "", link: "" },
+        { location: "Gruaro (Valvasone)", year: "1294", description: "A woman doing laundry at the public wash house in Versiola noticed that an altar linen from the Church of St. Giusto she was washing had become tinged with blood. Looking more closely, she found a consecrated host caught in the folds of the cloth, with blood flowing from it.", image: "", link: "" },
         { location: "Lanciano", year: "c. 700", description: "A monk who doubted the Real Presence saw the host turn to visible flesh and the wine turn to blood during Mass. The relics have been venerated and displayed ever since.", image: "https://laudate-mariam.com/cdn/shop/articles/lanciano_480x.webp?v=1667541294", link: "" },
-        { location: "Macerata", year: "1356", description: "", image: "", link: "" },
-        { location: "Mogoro", year: "1604", description: "", image: "", link: "" },
-        { location: "Morrovalle", year: "1560", description: "", image: "", link: "" },
-        { location: "Offida", year: "1273–1280", description: "", image: "", link: "" },
-        { location: "Patierno (Naples)", year: "1772", description: "", image: "", link: "" },
-        { location: "Rimini", year: "1227", description: "", image: "", link: "" },
-        { location: "Rome", year: "VI–VII cent.", description: "", image: "", link: "" },
-        { location: "Rome", year: "1610", description: "", image: "", link: "" },
-        { location: "Rosano", year: "1948", description: "", image: "", link: "" },
-        { location: "St. Peter Damian", year: "XI cent.", description: "", image: "", link: "" },
-        { location: "Salzano", year: "1517", description: "", image: "", link: "" },
-        { location: "Scala", year: "1732", description: "", image: "", link: "" },
-        { location: "Siena", year: "1730", description: "", image: "", link: "" },
-        { location: "Trani", year: "XI cent.", description: "", image: "", link: "" },
-        { location: "Turin", year: "1453", description: "", image: "", link: "" },
-        { location: "Turin", year: "1640", description: "", image: "", link: "" },
-        { location: "Veroli", year: "1570", description: "", image: "", link: "" },
-        { location: "Volterra", year: "1472", description: "", image: "", link: "" }
+        { location: "Macerata", year: "1356", description: "On April 25, 1356, an unnamed priest celebrating Mass in a chapel of the Church of St. Catherine in Macerata was overcome with doubt about the Real Presence as he broke the consecrated host. At that moment, blood flowed abundantly from the host, staining the corporal and the chalice on the altar.", image: "", link: "" },
+        { location: "Mogoro", year: "1604", description: "In 1604, two men in a state of mortal sin dropped consecrated hosts during Communion at Mogoro. The hosts left permanent imprints in the stone where they fell, regarded since as a sign of the gravity of receiving the Eucharist unworthily.", image: "", link: "" },
+        { location: "Morrovalle", year: "1560", description: "A fire that swept through and destroyed a Franciscan church in Morrovalle in 1560 burned its pyx, yet the consecrated host it had held was found afterward completely unharmed by the flames.", image: "", link: "" },
+        { location: "Offida", year: "1273–1280", description: "The relics of a Eucharistic miracle that took place in Offida between 1273 and 1280, in which a consecrated host became living flesh, are kept near the Church of St. Augustine. Numerous historical records document the event, including papal decrees stretching from Pope Boniface VIII in 1295 to Pope Sixtus V in 1585.", image: "", link: "" },
+        { location: "Patierno (Naples)", year: "1772", description: "In 1772, hosts stolen from a church near Naples were buried under a pile of manure for roughly a month by the thief seeking to dispose of evidence. When they were recovered, the hosts were found perfectly intact, untouched by the decay that should have destroyed them.", image: "", link: "" },
+        { location: "Rimini", year: "1227", description: "A skeptic named Bonovillo publicly challenged Saint Anthony of Padua to prove the truth of the Real Presence, declaring he would believe only if his own mule, starved for three days, chose to kneel before the Eucharist rather than eat the food he offered it. When the test was carried out, the famished mule knelt before the host Saint Anthony presented and ignored the fodder entirely.", image: "", link: "" },
+        { location: "Rome", year: "VI–VII cent.", description: "During a Mass celebrated by Pope St. Gregory the Great around the year 595, a Roman noblewoman began to laugh while approaching Communion because she doubted that the bread she had baked herself could truly become the Body of Christ. Troubled, the Pope withheld Communion from her and prayed; when he looked again, the bread had visibly become flesh and blood, and the woman fell to the ground in tears of repentance.", image: "", link: "" },
+        { location: "Rome", year: "1610", description: "In 1610, a priest troubled by doubt dropped a consecrated host while celebrating Mass in Rome. The host left a bloodstain on the marble steps of the church that has remained visible ever since.", image: "", link: "" },
+        { location: "Rosano", year: "1948", description: "In 1948, a life-sized statue of the Sacred Heart of Jesus housed in the monastery church of Rosano was seen to bleed and weep on several occasions. Medical analysis at the time confirmed that the substance was genuine blood.", image: "", link: "" },
+        { location: "St. Peter Damian", year: "XI cent.", description: "Saint Peter Damian, later declared a Doctor of the Church, personally witnessed and recorded a Eucharistic miracle that took place around 1050. A woman, urged on by a sorceress, had concealed a stolen consecrated host in her handkerchief and was hurrying from the church when a priest caught up to her and recovered it. When he unfolded the cloth, he found that half of the host had visibly become flesh while the other half retained the ordinary appearance of bread.", image: "", link: "" },
+        { location: "Salzano", year: "1517", description: "In 1517, as a priest carried the Eucharist through the streets of Salzano to a dying person, the donkeys he passed were seen to kneel down in apparent recognition of Christ's presence, a sign witnesses took as confirmation of the Real Presence even among animals.", image: "", link: "" },
+        { location: "Scala", year: "1732", description: "Over three consecutive months in 1732, the signs of Christ's Passion were reported to appear in an exposed consecrated host at Scala. The event was witnessed by several bishops as well as by Saint Alphonsus Liguori.", image: "", link: "" },
+        { location: "Siena", year: "1730", description: "On the night of August 14, 1730, 351 consecrated hosts were stolen from a church in Siena. When they were recovered shortly afterward, all were found intact, and over the following centuries they showed no sign of decay; roughly 223 of the original hosts survive today, a preservation that repeated scientific investigations have been unable to explain by natural means.", image: "", link: "" },
+        { location: "Trani", year: "XI cent.", description: "A non-Christian woman, with the help of Christian acquaintances, managed to steal a consecrated host during Mass as a way of testing or mocking Catholic belief. She placed the host into a frying pan of hot oil, and blood immediately gushed out of it, spilling across the floor and flowing out through the door of her house.", image: "", link: "" },
+        { location: "Turin", year: "1453", description: "In 1453, a consecrated host being transported on the back of a mule fell to the ground when soldiers were plundering a church during a raid. The host rose into the air on its own, glowing brightly, and descended into a chalice held up by the bishop of the city.", image: "", link: "" },
+        { location: "Turin", year: "1640", description: "During the invasion of Turin by Count Harcourt's army in 1640, soldiers broke into the Church of St. Maria del Monte and attacked the civilians sheltering there. When a soldier attempted to desecrate the consecrated hosts kept in the ciborium, flames suddenly blazed up from the vessel and burned him, sparing the friars and the Blessed Sacrament from further harm.", image: "", link: "" },
+        { location: "Veroli", year: "1570", description: "During a Forty Hours devotion in 1570, witnesses in Veroli reported that the Christ Child appeared within the host exposed for adoration.", image: "", link: "" },
+        { location: "Volterra", year: "1472", description: "A soldier who committed an act of sacrilege against the Eucharist in Volterra in 1472 was struck blind shortly afterward, and the city was shaken by an earthquake that followed soon after the event.", image: "", link: "" }
       ]},
       { country: "Mexico", entries: [
-        { location: "Tixtla", year: "2006", description: "", image: "", link: "https://www.ncregister.com/features/three-eucharistic-miracles-which-cases-have-undergone-the-most-extensive-scientific-analysis" }
+        { location: "Tixtla", year: "2006", description: "During a spiritual retreat attended by roughly 600 people in Tixtla in 2006, a consecrated host began to exude a reddish substance as it was being distributed during Communion. A multi-year investigation led by Dr. Ricardo Castañón reported finding human blood and cardiac tissue in the sample, though the findings were not published in a peer-reviewed journal and have been disputed by some forensic critics; the diocesan process remains open and Rome has not issued a formal approval of the case.", image: "", link: "https://www.ncregister.com/features/three-eucharistic-miracles-which-cases-have-undergone-the-most-extensive-scientific-analysis" }
       ]},
       { country: "Holland", entries: [
-        { location: "Alkmaar", year: "1429", description: "", image: "", link: "" },
-        { location: "Amsterdam", year: "1345", description: "", image: "", link: "" },
-        { location: "Bergen", year: "1421", description: "", image: "", link: "" },
-        { location: "Boxmeer", year: "1400", description: "", image: "", link: "" },
-        { location: "Boxtel-Hoogstraten", year: "1380", description: "", image: "", link: "" },
-        { location: "Breda-Niervaart", year: "1300", description: "", image: "", link: "" },
-        { location: "Meerssen", year: "1222", description: "", image: "", link: "" },
-        { location: "Meerssen", year: "1465", description: "", image: "", link: "" },
-        { location: "Stiphout", year: "1342", description: "", image: "", link: "" }
+        { location: "Alkmaar", year: "1429", description: "While celebrating his first Mass, a young priest named Folkert accidentally spilled the consecrated wine. Witnesses reported that the spilled wine visibly transformed into Blood before the gathered congregation.", image: "", link: "" },
+        { location: "Amsterdam", year: "1345", description: "A gravely ill man named Ysbrand Dommer vomited up the Communion host he had just received, and his maid threw the soiled host into the lit fireplace to dispose of it. The next morning, the host was found completely intact, suspended in the air in the middle of the dead fire. The bishop of Utrecht authorized devotion to the relic, and Amsterdam still holds an annual procession in its honor.", image: "", link: "" },
+        { location: "Bergen", year: "1421", description: "A priest in Bergen op Zoom, troubled by doubt about the Real Presence, threw several consecrated hosts into a river. The hosts were later found floating, stained with visible blood, which the priest and others took as confirmation of the truth he had doubted.", image: "", link: "" },
+        { location: "Boxmeer", year: "1400", description: "During Mass in 1400, a priest who doubted the Real Presence of Christ in the Eucharist watched the consecrated wine turn into Blood and bubble up out of the chalice, spilling onto the corporal and coagulating into a lump roughly the size of a walnut. The relic, preserved at the Church of St. Peter and St. Paul, has shown no sign of decay or change in the centuries since.", image: "", link: "" },
+        { location: "Boxtel-Hoogstraten", year: "1380", description: "A priest named Eligius van der Aker, celebrating Mass at the altar of the Three Kings around 1380, accidentally knocked over the chalice of consecrated wine just after the consecration. The spilled wine had already become Blood, and it stained the corporal and altar cloth permanently; the corporal is preserved today in Boxtel, and the altar cloth in Hoogstraten.", image: "", link: "" },
+        { location: "Breda-Niervaart", year: "1300", description: "During the plundering of the village of Niervaart by Spanish soldiers around 1300, a consecrated host was lost amid the chaos. It was found some time later by a local farmer, Jan Bautoen, who came upon it intact and glowing in a field on the feast of St. John the Baptist; the relic was carried in procession to the church and is venerated today in Breda.", image: "", link: "" },
+        { location: "Meerssen", year: "1222", description: "While celebrating Mass in 1222 at the convent church of Meerssen, a priest watched living blood drip visibly from an unusually large host he had just consecrated, staining the corporal beneath it. The relic became one of the most visited Eucharistic shrines in the Low Countries.", image: "", link: "" },
+        { location: "Meerssen", year: "1465", description: "When a devastating fire broke out and destroyed the church at Meerssen in 1465, a local farmer rushed in and rescued the relic of the Blood-stained corporal from the 1222 miracle, carrying it to safety completely unharmed by the blaze that consumed everything around it.", image: "", link: "" },
+        { location: "Stiphout", year: "1342", description: "During a violent storm in 1342, lightning struck and set fire to the church at Stiphout, burning it to the ground. The consecrated hosts kept in the tabernacle were found afterward to have been preserved untouched by the flames.", image: "", link: "" }
       ]},
       { country: "Peru", entries: [
-        { location: "Eten", year: "1649", description: "", image: "", link: "" }
+        { location: "Eten", year: "1649", description: "In a host exposed for public adoration at the Peruvian port of Eten in 1649, worshippers reported seeing the figure of the Christ Child appear together with three interconnected hearts of brilliant white light. The apparition was witnessed on multiple occasions by those gathered for adoration.", image: "", link: "" }
       ]},
       { country: "Poland", entries: [
-        { location: "Krakow", year: "1345", description: "", image: "", link: "" },
-        { location: "Glotowo", year: "1290", description: "", image: "", link: "" },
+        { location: "Krakow", year: "1345", description: "Thieves who stole a monstrance holding consecrated hosts from a church outside Krakow eventually abandoned it in a muddy marsh after fleeing the village of Wawel. The hosts were discovered there because they emitted an unusual, unmistakably bright light from within the marsh. The site is now marked by the Church of Corpus Christi in Krakow, which preserves documents and paintings describing the event.", image: "", link: "" },
+        { location: "Glotowo", year: "1290", description: "During a Lithuanian invasion in 1290, a parish priest in the village of Glotowo buried a gold-plated silver ciborium in a field, not realizing a consecrated host remained inside. The invaders destroyed the village and church, and the location of the buried host was forgotten until, years later, a farmer plowing the field noticed his oxen behaving strangely; they had bowed down before the ciborium, which was glowing with light as it lay in the soil.", image: "", link: "" },
         { location: "Legnica", year: "2013", description: "", image: "", link: "" },
-        { location: "Poznan", year: "1399", description: "", image: "", link: "" },
+        { location: "Poznan", year: "1399", description: "In 1399, thieves stole three consecrated hosts from a church and threw them into a swamp outside Poznań to hide the evidence. The hosts began to bleed where they lay, drawing attention to their location; they were recovered and are preserved today in Poznań Cathedral.", image: "", link: "" },
         { location: "Sokółka", year: "2008", description: "", image: "", link: "https://www.ncregister.com/features/three-eucharistic-miracles-which-cases-have-undergone-the-most-extensive-scientific-analysis" }
       ]},
       { country: "Portugal", entries: [
-        { location: "Santarém", year: "1247", description: "", image: "", link: "" }
+        { location: "Santarém", year: "1247", description: "A woman in an abusive marriage, desperate to win back her unfaithful husband, was told by a witch she consulted that a consecrated host was needed for a spell. She managed to steal a host during Mass and wrapped it in a linen cloth to carry it home, but the cloth immediately became stained with blood, and the host itself transformed into bleeding flesh. Both relics are still preserved and venerated in the Church of St. Stephen in Santarém.", image: "", link: "" }
       ]},
       { country: "Spain", entries: [
-        { location: "Alboraya-Almacéra", year: "1348", description: "", image: "", link: "" },
-        { location: "Alcalà", year: "1597", description: "", image: "", link: "" },
-        { location: "Alcoy", year: "1568", description: "", image: "", link: "" },
-        { location: "Caravaca de la Cruz", year: "1231", description: "", image: "", link: "" },
-        { location: "Cimballa", year: "1370", description: "", image: "", link: "" },
-        { location: "Daroca", year: "1239", description: "", image: "", link: "" },
-        { location: "Gerona", year: "1297", description: "", image: "", link: "" },
-        { location: "Gorkum-El Escorial", year: "1572", description: "", image: "", link: "" },
-        { location: "Guadalupe", year: "1420", description: "", image: "", link: "" },
-        { location: "Ivorra", year: "1010", description: "", image: "", link: "" },
-        { location: "Moncada", year: "1392", description: "", image: "", link: "" },
-        { location: "Montserrat", year: "1657", description: "", image: "", link: "" },
-        { location: "O'Cebreiro", year: "1300", description: "", image: "", link: "" },
-        { location: "Onil", year: "1824", description: "", image: "", link: "" },
-        { location: "Ponferrada", year: "1533", description: "", image: "", link: "" },
-        { location: "S. John of the Abbesses", year: "1251", description: "", image: "", link: "" },
-        { location: "Silla", year: "1907", description: "", image: "", link: "" },
-        { location: "Zaragoza", year: "1427", description: "", image: "", link: "" }
+        { location: "Alboraya-Almacéra", year: "1348", description: "A priest crossing a small river on his way to bring Communion to the sick slipped and dropped the ciborium holding several consecrated hosts into the water. As he resigned himself to the loss, fishermen nearby called out to him, pointing to fish in the water with the round, white discs of the hosts held gently in their mouths. The hosts were recovered intact and carried back to the church in a procession joined by the whole village.", image: "", link: "" },
+        { location: "Alcalà", year: "1597", description: "Consecrated hosts stolen from an Alcalá de Henares church in 1597 remained miraculously intact for more than seventeen years, even as unconsecrated hosts placed alongside them for comparison decomposed normally. The relic survived until it was lost during the turmoil of the Spanish Civil War in 1936.", image: "", link: "" },
+        { location: "Alcoy", year: "1568", description: "After consecrated hosts were stolen from a church in Alcoy in 1568, a statue of the Christ Child in the church was reported to point miraculously toward the location where the hosts had been hidden, leading directly to their recovery.", image: "", link: "" },
+        { location: "Caravaca de la Cruz", year: "1231", description: "A Mamluk king of Murcia, curious about the Christian rite, requested that a captive Christian priest celebrate Mass before him. As the priest reached the moment of consecration, witnesses reported seeing a small crucifix, carried by angels, descend and appear within the host. The vision moved the king and his family to convert to Christianity.", image: "", link: "" },
+        { location: "Cimballa", year: "1370", description: "In 1370, the parish priest of Cimballa was assailed during Mass by a powerful doubt about Christ's true presence in the Eucharist. The host transformed into flesh, and blood began flowing onto the altar linens before him. The shaken priest later retired to a monastery to live a life of penance, and the bloodstained corporal is still kept and venerated in the parish church every September 12.", image: "", link: "" },
+        { location: "Daroca", year: "1239", description: "Spanish forces facing the Moors asked a field priest to celebrate Mass before battle, but the Mass was interrupted partway through by a surprise enemy attack, forcing the priest to hide the already-consecrated hosts among the sacred linens. After the Spanish won the battle, the commanders asked for the hosts to be distributed, only to find them completely soaked in blood. The blood-stained linens are still preserved and venerated in Daroca today.", image: "", link: "" },
+        { location: "Gerona", year: "1297", description: "A priest celebrating Mass in Gerona was troubled by doubt about the Real Presence of Christ in the Eucharist. When he attempted to receive Communion, he found he could not swallow the host, which had transformed into flesh in his mouth. The relic of the transformed host was unfortunately destroyed during the Spanish Civil War in 1936.", image: "", link: "" },
+        { location: "Gorkum-El Escorial", year: "1572", description: "Protestant mercenaries who plundered a Catholic church in Gorkum, Holland, in 1572 trampled a consecrated host underfoot with a spiked boot as an act of deliberate insult, breaking it into three pieces. The host was found to be bleeding from the act, and the relic was later transferred to the Royal Monastery of El Escorial in Spain, where it is preserved today.", image: "", link: "" },
+        { location: "Guadalupe", year: "1420", description: "A Eucharistic miracle is recorded as having taken place in 1420 at the Royal Monastery of Guadalupe, one of the most important pilgrimage sites in medieval Spain and today a UNESCO World Heritage Site, though detailed contemporary accounts of the specific event are sparse.", image: "", link: "" },
+        { location: "Ivorra", year: "1010", description: "The parish priest of Ivorra had long harbored doubts about the Real Presence of Christ in the Eucharist. While celebrating Mass in the year 1010, he watched the wine in his chalice convert entirely into visibly living blood before him, which poured out onto the altar cloth and down to the floor. The relics, including the stained altar cloth, are kept today in a Gothic reliquary dating to 1426.", image: "", link: "" },
+        { location: "Moncada", year: "1392", description: "During the upheaval of the Western Schism in 1392, doubts circulated about the validity of a newly ordained priest's orders. While he celebrated his first Mass, witnesses, including the future Saint Inés de Moncada, reported seeing the Christ Child appear in the consecrated host, taken as divine confirmation that his ordination and his Mass were valid.", image: "", link: "" },
+        { location: "Montserrat", year: "1657", description: "In 1657, a young girl at Montserrat reported witnessing, over the course of three successive Masses, a vision of her deceased father's soul in purgatory gradually progressing from flames to white robes before ascending to heaven. The account was recorded by the Benedictine priest Francisco de Paula Crusellas in his history of the sanctuary.", image: "", link: "" },
+        { location: "O'Cebreiro", year: "1300", description: "Around the year 1300, a priest at O'Cebreiro who harbored doubts about the Real Presence of Christ in the Eucharist was celebrating Mass during a severe blizzard when a single farmer braved the storm to attend. During the consecration, the host changed visibly into flesh and the wine into blood, which spilled from the chalice and stained the corporal, strengthening the priest's faith. The relics are still venerated near the church where the miracle occurred.", image: "", link: "" },
+        { location: "Onil", year: "1824", description: "A pyx containing a consecrated host was stolen from a parish church in Onil in 1824. It was later found, fully intact, by a woman from the nearby town of Tibi lying in the middle of a green field. Exactly 119 years later, in 1943, a delegate of the Archbishop of Valencia formally confirmed that the host had remained completely preserved.", image: "", link: "" },
+        { location: "Ponferrada", year: "1533", description: "A man named Juan de Benavente stole a silver ciborium holding numerous consecrated hosts from his own parish church in 1533. As he tried to dispose of the stolen tabernacle, it became impossibly heavy to carry, and miraculous lights and doves are said to have appeared, leading townspeople to the location of the hidden hosts and securing their recovery.", image: "", link: "" },
+        { location: "S. John of the Abbesses", year: "1251", description: "At the monastery founded in 887 by Count Wilfred in the Catalan Pyrenees, around which the village of Sant Joan de les Abadesses grew, a consecrated host has been preserved since 1251 embedded in the forehead of a large wooden crucifix kept in the monastery church.", image: "", link: "" },
+        { location: "Silla", year: "1907", description: "Hosts stolen by unidentified thieves from a church near Valencia in 1907 were later recovered hidden beneath a stone in a small garden outside the city of Silla. The hosts were found in perfect condition and have remained intact ever since; they are venerated today in the church of Our Lady of the Angels in Silla.", image: "", link: "" },
+        { location: "Zaragoza", year: "1427", description: "A consecrated host stolen for use in a love potion was found, when unwrapped, to reveal the figure of the infant Jesus rather than ordinary bread. When the host was later placed into fire by those who discovered it, the Christ Child within it remained completely unharmed by the flames.", image: "", link: "" }
       ]},
       { country: "Switzerland", entries: [
-        { location: "Ettiswil", year: "1447", description: "", image: "", link: "" }
+        { location: "Ettiswil", year: "1447", description: "A Eucharistic miracle is recorded as having taken place in Ettiswil in 1447 and has long been historically recognized by the local Church, though detailed contemporary accounts describing exactly what occurred have not survived.", image: "", link: "" }
       ]},
       { country: "Venezuela", entries: [
         { location: "Betania", year: "1991", description: "", image: "", link: "" }
       ]}
     ];
-
-    function slugify(str){
-      return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'');
-    }
-
-    function cardHTML(country, entry){
-      const desc = entry.description && entry.description.trim() !== ''
-        ? entry.description
-        : 'Add a short description of what happened here.';
-      const hasImg = entry.image && entry.image.trim() !== '';
-      const hasLink = entry.link && entry.link.trim() !== '';
-      const searchKey = (country + ' ' + entry.location).toLowerCase();
-
-      return `
-        <article class="miracle-card" data-search="${searchKey}">
-          <div class="miracle-card-image"${hasImg ? ` style="background-image:url('${entry.image}')"` : ''}>
-            ${hasImg ? '' : '<span>Add photo</span>'}
-          </div>
-          <div class="miracle-card-body">
-            <p class="miracle-card-meta">${country} · ${entry.year}</p>
-            <h3>${entry.location}</h3>
-            <p class="miracle-card-desc">${desc}</p>
-            ${hasLink
-              ? `<a class="miracle-card-link" href="${entry.link}" target="_blank" rel="noopener">Read the full article →</a>`
-              : `<span class="miracle-card-link miracle-card-link--empty">Add a link to the full article</span>`}
-          </div>
-        </article>
-      `;
-    }
-
-    function renderMiracles(data){
-      const root = document.getElementById('miracle-list');
-      root.innerHTML = data.map(country => `
-        <section class="country-section" id="${slugify(country.country)}">
-          <div class="country-heading">
-            <h2>${country.country}</h2>
-            <span class="country-count">${country.entries.length} miracle${country.entries.length > 1 ? 's' : ''}</span>
-          </div>
-          <div class="miracle-grid">
-            ${country.entries.map(e => cardHTML(country.country, e)).join('')}
-          </div>
-        </section>
-      `).join('');
-    }
-
-    function renderJumpNav(data){
-      const nav = document.getElementById('country-jump');
-      nav.innerHTML = data
-        .map(c => `<a href="#${slugify(c.country)}">${c.country}</a>`)
-        .join('<span class="sep" aria-hidden="true">·</span>');
-    }
-
-    renderMiracles(miracleCountries);
-    renderJumpNav(miracleCountries);
-
-    document.getElementById('miracle-search').addEventListener('input', e => {
-      const q = e.target.value.trim().toLowerCase();
-      let anyVisible = false;
-
-      document.querySelectorAll('.country-section').forEach(section => {
-        let sectionHasVisible = false;
-        section.querySelectorAll('.miracle-card').forEach(card => {
-          const match = card.dataset.search.includes(q);
-          card.style.display = match ? '' : 'none';
-          if (match) sectionHasVisible = true;
-        });
-        section.style.display = sectionHasVisible ? '' : 'none';
-        if (sectionHasVisible) anyVisible = true;
-      });
-
-      document.getElementById('miracle-empty').style.display = anyVisible ? 'none' : 'block';
-    });
-  </script>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
