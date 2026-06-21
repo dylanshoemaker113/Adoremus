@@ -1155,3 +1155,221 @@ ol.steps li {
   padding: 2px 8px;
   margin-bottom: .5rem;
 }
+
+/* ============================================================
+   Eucharistic Miracles — Badge & Expandable Card Additions
+   Paste the contents of this file at the end of css/style.css.
+   ============================================================ */
+
+/* ------------------------------------------------------------------
+   BADGE LEGEND (the key below the jump nav)
+   ------------------------------------------------------------------ */
+.miracle-badge-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-top: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--miracle-ink-soft);
+  align-items: center;
+}
+
+.miracle-badge-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ------------------------------------------------------------------
+   BADGE PILLS
+   ------------------------------------------------------------------ */
+.miracle-badge {
+  font-family: 'Inter', sans-serif;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.badge--scientific {
+  background: #d6f0e8;
+  color: #1a5c45;
+  border: 1px solid #9adac5;
+}
+
+.badge--documented {
+  background: #f5ead0;
+  color: #6b4a13;
+  border: 1px solid #d4b07a;
+}
+
+.badge--tradition {
+  background: #f0ede8;
+  color: #5a5048;
+  border: 1px solid #ccc4b4;
+}
+
+/* ------------------------------------------------------------------
+   CARD TOP ROW  (meta + badge, side by side)
+   ------------------------------------------------------------------ */
+.miracle-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2px;
+}
+
+.miracle-card-top .miracle-card-meta {
+  margin: 0;
+}
+
+/* ------------------------------------------------------------------
+   TEASER  (the always-visible summary, replaces the old full desc)
+   ------------------------------------------------------------------ */
+.miracle-card-teaser {
+  margin: 4px 0 10px;
+  font-size: .92rem;
+  line-height: 1.58;
+  color: var(--miracle-ink-soft);
+  flex: 1;
+}
+
+/* ------------------------------------------------------------------
+   EXPANDABLE  <details> / <summary>
+   ------------------------------------------------------------------ */
+.miracle-card-details {
+  border-top: 1px solid var(--miracle-hairline);
+  margin: 6px -18px -18px;    /* bleed to card edges */
+}
+
+.miracle-card-expand {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 18px;
+  font-family: 'Inter', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--miracle-wine);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  user-select: none;
+  transition: background .15s ease;
+}
+
+.miracle-card-expand::-webkit-details-marker { display: none; }
+.miracle-card-expand::marker              { display: none; }
+
+.miracle-card-expand::after {
+  content: '+';
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--miracle-gold);
+  flex-shrink: 0;
+  transition: transform .2s ease;
+}
+
+.miracle-card-details[open] .miracle-card-expand::after {
+  transform: rotate(45deg);
+}
+
+.miracle-card-expand:hover {
+  background: var(--miracle-parchment-deep);
+}
+
+/* ------------------------------------------------------------------
+   EXPANDED CONTENT PANEL
+   ------------------------------------------------------------------ */
+.miracle-card-full {
+  padding: 14px 18px 18px;
+  background: var(--miracle-parchment-deep);
+  border-top: 1px solid var(--miracle-hairline);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.miracle-card-desc {
+  margin: 0;
+  font-size: .93rem;
+  line-height: 1.7;
+  color: var(--miracle-ink-soft);
+}
+
+/* ------------------------------------------------------------------
+   HISTORICITY NOTE  (amber callout inside expanded panel)
+   ------------------------------------------------------------------ */
+.miracle-historicity-note {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: .83rem;
+  line-height: 1.6;
+  color: #6b3d0c;
+  background: #fdf3df;
+  border-left: 3px solid #d4a045;
+  padding: 9px 12px;
+  border-radius: 0 2px 2px 0;
+}
+
+.miracle-historicity-note strong {
+  color: #4d2c07;
+  font-weight: 700;
+}
+
+/* ------------------------------------------------------------------
+   RESPONSIVE
+   ------------------------------------------------------------------ */
+@media (max-width: 420px) {
+  .miracle-card-top { flex-direction: column; gap: 4px; }
+}
+
+/* ------------------------------------------------------------------
+   CATEGORY FILTER BAR
+   ------------------------------------------------------------------ */
+.miracle-category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.miracle-chip {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border: 1px solid var(--miracle-hairline);
+  border-radius: 99px;
+  background: var(--miracle-card-bg);
+  color: var(--miracle-ink-soft);
+  cursor: pointer;
+  transition: all .18s ease;
+  white-space: nowrap;
+}
+
+.miracle-chip:hover {
+  border-color: var(--miracle-wine);
+  color: var(--miracle-wine);
+}
+
+.miracle-chip.is-active {
+  background: var(--miracle-wine);
+  border-color: var(--miracle-wine);
+  color: #fff;
+}
+
+/* ============================================================
+   END OF ADDITIONS
+   ============================================================ */
