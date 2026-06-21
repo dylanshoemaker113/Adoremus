@@ -1427,6 +1427,8 @@ const miracleCountries = [
 
 ];
 
+const _modalData = [];
+
 /* ------------------------------------------------------------------
    HELPERS
    ------------------------------------------------------------------ */
@@ -1442,11 +1444,24 @@ function badgeHTML(badge, label) {
 }
 
 function cardHTML(country, entry) {
-  const hasImg  = entry.image  && entry.image.trim()  !== '';
-  const hasLink = entry.link   && entry.link.trim()   !== '';
+  const hasImg  = entry.image && entry.image.trim() !== '';
+  const hasLink = entry.link  && entry.link.trim()  !== '';
   const hasFull = entry.description && entry.description.trim() !== '';
   const hasNote = entry.historicityNote && entry.historicityNote.trim() !== '';
   const searchKey = (country + ' ' + entry.location).toLowerCase();
+
+  let modalIdx = -1;
+  if (hasFull) {
+    modalIdx = _modalData.length;
+    _modalData.push({
+      location: entry.location,
+      meta: `${country} · ${entry.year}`,
+      badgeHTML: entry.badge ? badgeHTML(entry.badge, entry.badgeLabel) : '',
+      description: entry.description,
+      note: hasNote ? entry.historicityNote : '',
+      link: hasLink ? entry.link : ''
+    });
+  }
 
   return `
     <article class="miracle-card" data-search="${searchKey}" data-category="${entry.category || ''}">
@@ -1460,18 +1475,68 @@ function cardHTML(country, entry) {
         </div>
         <h3>${entry.location}</h3>
         <p class="miracle-card-teaser">${entry.teaser || 'Description coming soon.'}</p>
-        ${hasFull ? `
-        <details class="miracle-card-details">
-          <summary class="miracle-card-expand">Read the full account</summary>
-          <div class="miracle-card-full">
-            <p class="miracle-card-desc">${entry.description}</p>
-            ${hasNote ? `<p class="miracle-historicity-note"><strong>Historical note:</strong> ${entry.historicityNote}</p>` : ''}
-            ${hasLink ? `<a class="miracle-card-link" href="${entry.link}" target="_blank" rel="noopener">Read the full article →</a>` : ''}
-          </div>
-        </details>` : ''}
+        ${modalIdx >= 0 ? `<button class="miracle-card-btn" data-modal-idx="${modalIdx}" type="button">Read the full account →</button>` : ''}
       </div>
     </article>
   `;
+}
+
+/* ---- Modal ---- */
+let _lastFocused = null;
+
+function createModal() {
+  const overlay = document.createElement('div');
+  overlay.id = 'miracle-modal-overlay';
+  overlay.className = 'miracle-modal-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-labelledby', 'miracle-modal-heading');
+  overlay.innerHTML = `
+    <div class="miracle-modal">
+      <div class="miracle-modal-header">
+        <div>
+          <p class="miracle-card-meta" id="miracle-modal-meta"></p>
+          <h2 class="miracle-modal-h2" id="miracle-modal-heading"></h2>
+        </div>
+        <button class="miracle-modal-close" id="miracle-modal-close" aria-label="Close">&#x2715;</button>
+      </div>
+      <div class="miracle-modal-body" id="miracle-modal-body"></div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  document.getElementById('miracle-modal-close').addEventListener('click', closeModal);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}
+
+function openModal(data) {
+  _lastFocused = document.activeElement;
+  document.getElementById('miracle-modal-meta').textContent = data.meta;
+  document.getElementById('miracle-modal-heading').textContent = data.location;
+  document.getElementById('miracle-modal-body').innerHTML = `
+    ${data.badgeHTML ? `<div>${data.badgeHTML}</div>` : ''}
+    <p class="miracle-card-desc">${data.description}</p>
+    ${data.note ? `<p class="miracle-historicity-note"><strong>Historical note:</strong> ${data.note}</p>` : ''}
+    ${data.link ? `<a class="miracle-card-link" href="${data.link}" target="_blank" rel="noopener">Read the full article →</a>` : ''}
+  `;
+  document.getElementById('miracle-modal-overlay').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('miracle-modal-close').focus();
+}
+
+function closeModal() {
+  document.getElementById('miracle-modal-overlay').classList.remove('is-open');
+  document.body.style.overflow = '';
+  if (_lastFocused) _lastFocused.focus();
+}
+
+function initModal() {
+  createModal();
+  document.getElementById('miracle-list').addEventListener('click', e => {
+    const btn = e.target.closest('[data-modal-idx]');
+    if (!btn) return;
+    openModal(_modalData[+btn.dataset.modalIdx]);
+  });
 }
 
 /* ------------------------------------------------------------------
@@ -1597,6 +1662,7 @@ renderJumpNav(miracleCountries);
 renderBadgeLegend();
 renderCategoryFilters();
 initSearch();
+initModal(); // ← add this
   </script>
 
   <script src="js/main.js"></script>
