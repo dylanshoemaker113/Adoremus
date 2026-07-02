@@ -10,6 +10,7 @@
   var NAV_LINKS = [
     { href: "index.html", label: "Home" },
     { href: "about-eucharist.html", label: "About the Eucharist" },
+    { href: "church-fathers-saints.html", label: "Church Fathers & Saints" },
     { href: "eucharistic-miracles.html", label: "Eucharistic Miracles" },
     { href: "how-to-receive.html", label: "How to Receive" },
     { href: "encounter-jesus.html", label: "Encounter Jesus" },
