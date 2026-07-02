@@ -1115,6 +1115,28 @@ ol.steps li {
   color: var(--color-night-text);
 }
 
+/* -- Dark-theme overrides for timeline & quotes inside .hardest-teaching -- */
+.hardest-teaching .lede {
+  color: rgba(236, 227, 210, 0.8);
+}
+.hardest-teaching .timeline {
+  border-left-color: rgba(236, 227, 210, 0.18);
+}
+.hardest-teaching .timeline-item::before {
+  background: var(--color-night);
+  border-color: var(--color-gold-bright);
+}
+.hardest-teaching .timeline-date {
+  color: rgba(236, 227, 210, 0.55);
+}
+.hardest-teaching blockquote.scripture {
+  color: var(--color-night-text);
+  border-left-color: var(--color-gold-bright);
+}
+.hardest-teaching blockquote.scripture cite {
+  color: rgba(236, 227, 210, 0.6);
+}
+
 .receive-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
