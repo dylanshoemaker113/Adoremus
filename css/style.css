@@ -1514,3 +1514,46 @@ ol.steps li {
 .miracle-source-note a:hover {
   color: #2b2b2b;
 }
+
+.hardest-teaching .jn6-verse {
+    margin: 0 0 1.1rem;
+    font-family: var(--font-display, serif);
+    font-weight: 700;
+    font-style: normal;
+    color: var(--color-ink);
+    line-height: 1.65;
+  }
+  .hardest-teaching .jn6-verse sup {
+    font-weight: 700;
+    color: var(--color-gold-bright);
+    margin-right: 0.25em;
+    font-size: 0.75em;
+  }
+  .hardest-teaching .jn6-commentary-wrap {
+    margin: 0 0 2rem;
+    padding: 0.85rem 1.1rem;
+    background: rgba(0,0,0,0.03);
+    border-left: 3px solid var(--color-gold-bright);
+    border-radius: 0 4px 4px 0;
+  }
+  .hardest-teaching .jn6-commentary-label {
+    display: block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-gold-bright);
+    margin-bottom: 0.4rem;
+  }
+  .hardest-teaching .jn6-commentary {
+    margin: 0;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--color-ink-muted, #5c5c5c);
+    line-height: 1.6;
+  }
+  .hardest-teaching .jn6-commentary q {
+    font-style: italic;
+  }
