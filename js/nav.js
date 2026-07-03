@@ -15,7 +15,6 @@
     { href: "how-to-receive.html", label: "How to Receive" },
     { href: "encounter-jesus.html", label: "Encounter Jesus" },
     { href: "questions-objections.html", label: "Questions & Objections" },
-    { href: "beauty-tradition.html", label: "Beauty & Tradition" }
   ];
   function currentFile() {
     var path = window.location.pathname.split("/").pop();
