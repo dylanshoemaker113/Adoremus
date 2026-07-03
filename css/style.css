@@ -1520,7 +1520,7 @@ ol.steps li {
     font-family: var(--font-display, serif);
     font-weight: 700;
     font-style: normal;
-    color: var(--color-ink);
+    color: #2596be;
     line-height: 1.65;
   }
   .hardest-teaching .jn6-verse sup {
@@ -1551,7 +1551,7 @@ ol.steps li {
     font-style: italic;
     font-weight: 400;
     font-size: 0.95rem;
-    color: var(--color-ink-muted, #5c5c5c);
+    color: #a6a6a6;
     line-height: 1.6;
   }
   .hardest-teaching .jn6-commentary q {
