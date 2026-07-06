@@ -14,7 +14,6 @@
     { href: "eucharistic-miracles.html", label: "Eucharistic Miracles" },
     { href: "how-to-receive.html", label: "How to Receive" },
     { href: "encounter-jesus.html", label: "Encounter Jesus" },
-    { href: "questions-objections.html", label: "Questions & Objections" },
   ];
   function currentFile() {
     var path = window.location.pathname.split("/").pop();
