@@ -19,6 +19,39 @@
     var path = window.location.pathname.split("/").pop();
     return path === "" ? "index.html" : path;
   }
+  /* ---- Good Friday check --------------------------------------------
+     Good Friday is a moveable feast (2 days before Easter Sunday), so it
+     can't be hardcoded. This computes Easter Sunday for any year using
+     the standard Gregorian algorithm (Meeus/Jones/Butcher), then checks
+     today's date against Easter minus two days.
+     Note: uses the visitor's local device date/time zone. ---------- */
+  function getEasterSunday(year) {
+    var a = year % 19;
+    var b = Math.floor(year / 100);
+    var c = year % 100;
+    var d = Math.floor(b / 4);
+    var e = b % 4;
+    var f = Math.floor((b + 8) / 25);
+    var g = Math.floor((b - f + 1) / 3);
+    var h = (19 * a + b - d - g + 15) % 30;
+    var i = Math.floor(c / 4);
+    var k = c % 4;
+    var l = (32 + 2 * e + 2 * i - h - k) % 7;
+    var m = Math.floor((a + 11 * h + 22 * l) / 451);
+    var month = Math.floor((h + l - 7 * m + 114) / 31);
+    var day = ((h + l - 7 * m + 114) % 31) + 1;
+    return new Date(year, month - 1, day);
+  }
+  function isGoodFriday(today) {
+    var easter = getEasterSunday(today.getFullYear());
+    var goodFriday = new Date(easter);
+    goodFriday.setDate(easter.getDate() - 2);
+    return (
+      today.getFullYear() === goodFriday.getFullYear() &&
+      today.getMonth() === goodFriday.getMonth() &&
+      today.getDate() === goodFriday.getDate()
+    );
+  }
   function buildHeader() {
     var current = currentFile();
     var links = NAV_LINKS.map(function (link) {
@@ -61,6 +94,9 @@
     );
   }
   document.addEventListener("DOMContentLoaded", function () {
+    if (isGoodFriday(new Date())) {
+      document.body.classList.add("is-good-friday");
+    }
     var headerMount = document.getElementById("site-header");
     var footerMount = document.getElementById("site-footer");
     if (headerMount) {
