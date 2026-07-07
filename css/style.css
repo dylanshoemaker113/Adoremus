@@ -494,10 +494,11 @@ body.is-good-friday .lamp::after {
   justify-content: center;
 }
 .host-visual .host-cross svg {
-  width: 22%;
-  height: 22%;
-  opacity: 0.5;
+  width: 40%;
+  height: 40%;
+  opacity: 0.28;
 }
+
 .hero h1 {
   font-style: italic;
   color: var(--color-night-text);
