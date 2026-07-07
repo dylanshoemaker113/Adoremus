@@ -486,17 +486,17 @@ body.is-good-friday .lamp::after {
     0 0 40px 10px rgba(217, 179, 106, 0.35),
     inset 0 0 0 2px rgba(124, 36, 51, 0.18);
 }
-.host-visual .host-cross {
+.host-visual .host-mark {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.host-visual .host-cross svg {
-  width: 22%;
-  height: 22%;
-  opacity: 0.5;
+.host-visual .host-mark svg {
+  width: 34%;
+  height: 34%;
+  opacity: 0.28;
 }
 .hero h1 {
   font-style: italic;
