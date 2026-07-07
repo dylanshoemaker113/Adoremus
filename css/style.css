@@ -286,6 +286,16 @@ blockquote.scripture cite {
   .lamp::after { animation: none; }
   html { scroll-behavior: auto; }
 }
+/* Good Friday: the sanctuary lamp goes unlit for the day (the tabernacle
+   sits empty until the Vigil), rather than its usual cardinal-red glow.
+   No box-shadow, no breathing glow — just a dull, muted dot. */
+body.is-good-friday .lamp {
+  background: var(--color-stone);
+  box-shadow: none;
+}
+body.is-good-friday .lamp::after {
+  content: none;
+}
 /* --------------------------------------------------------------------
    6. HEADER & NAVIGATION
    -------------------------------------------------------------------- */
