@@ -497,8 +497,9 @@ body.is-good-friday .lamp::after {
 .host-visual .host-cross svg {
   width: 40%;
   height: 40%;
-  opacity: 0.28;
+  opacity: 0.6;
 }
+
 
 .hero h1 {
   font-style: italic;
