@@ -38,6 +38,9 @@
 #ECE3D2;    /* text on dark */
   --color-red-bright: 
 #c93a3a;   /* glow / highlight */
+  --color-mist: 
+#E7E5DF;   /* light grey section background, warm-leaning to fit the parchment palette */
+
   /* Typography */
   --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
   --font-body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
@@ -192,6 +195,12 @@ blockquote.scripture cite {
 }
 .section--alt {
   background-color: var(--color-parchment-deep);
+}
+.section--mist {
+  background-color: var(--color-mist);
+}
+.section--mist .card {
+  background: var(--color-parchment);
 }
 .section--night {
   background-color: var(--color-night);
