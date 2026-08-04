@@ -197,9 +197,11 @@
          was the source of the mismatched colors. All of that is removed;
          the saint-row/saint-media rules now live in style.css under real
          design tokens (see the "SAINT CARDS" block at the end of the file).
-         Added "section--alt" so this band is visually distinct (deep
-         parchment) from the lighter Early Church section above it. -->
-    <section class="section section--alt" id="saints">
+         Kept as plain "section" (no section--alt) so its background
+         matches the original preview's ivory tone rather than the deep-
+         parchment banding — its distinct look now comes from scoped
+         #saints rules in style.css instead. -->
+    <section class="section" id="saints">
       <div class="container">
 
         <div class="section-header is-left">
@@ -217,7 +219,7 @@
           <!-- 1. St. Tarcisius -->
           <article class="saint-row">
             <div class="saint-media">
-              <img src="https://westcoastcatholic.co/cdn/shop/articles/Screen_Shot_2024-01-11_at_3.06.45_PM.png?v=1705010873" alt="St. Tarcisius" onerror="this.classList.add('is-missing')">
+              <img src="images/saints/tarcisius.jpg" alt="St. Tarcisius" onerror="this.classList.add('is-missing')">
               <span class="saint-era-tag">3rd Century</span>
             </div>
             <div class="saint-content">

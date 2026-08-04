@@ -1581,17 +1581,51 @@ ol.steps li {
   }
 
 /* ============================================================
-   18. SAINT PROFILE ROWS (Saints & the Eucharist section)
-   Rebuilt from a duplicate-document paste-in that shipped its own
-   :root palette (--ink, --ivory, --oxblood, --gold, --gold-soft).
-   Because that block re-declared shared class names, it was
-   silently overriding .eyebrow / .container / .section colors
-   site-wide. These rules now use only the site's real tokens:
-     --ink      -> var(--color-ink)
-     --oxblood  -> var(--color-cardinal)
-     --gold     -> var(--color-gold)
-     --gold-soft-> var(--color-gold-bright)
+   18. SAINTS & THE EUCHARIST — scoped section-specific styling
+   This section intentionally looks slightly different from the rest
+   of the page (its own type sizes, a narrower container, its own
+   gold/oxblood shades) — that was the original design intent. The
+   old duplicate-document version achieved this with bare selectors
+   like .eyebrow and .container, which won the cascade site-wide and
+   bled into every other section. Every rule below is scoped under
+   #saints so the look is contained to just this section again.
    ============================================================ */
+#saints {
+  --saint-ink: #241f1a;
+  --saint-oxblood: #7a2530;
+  --saint-gold: #a9822e;
+  --saint-gold-soft: #d8c48f;
+  --saint-panel: #fcf8ef;
+  padding: 5rem 0; /* overrides the sitewide .section 6rem, scoped to this section only */
+}
+
+#saints .container {
+  max-width: 980px; /* narrower than the sitewide 1120px container, as in the original */
+}
+
+#saints .eyebrow {
+  font-size: .72rem;
+  letter-spacing: .14em;
+  color: var(--saint-oxblood);
+  margin-bottom: .75rem;
+}
+
+#saints .section-header {
+  max-width: 640px;
+  margin-bottom: 3.5rem;
+}
+#saints .section-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: var(--saint-ink);
+}
+#saints .section-header p {
+  margin: 0;
+  color: #544b3e;
+  font-size: 1.05rem;
+}
+
 .saints-feature {
   display: flex;
   flex-direction: column;
@@ -1617,8 +1651,8 @@ ol.steps li {
 .saint-media {
   position: relative;
   aspect-ratio: 3 / 4;
-  background: var(--color-parchment);
-  border: 1px solid var(--color-gold-bright);
+  background: var(--saint-panel);
+  border: 1px solid var(--saint-gold-soft);
   overflow: hidden;
 }
 .saint-media::before,
@@ -1627,7 +1661,7 @@ ol.steps li {
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 1.5px solid var(--color-gold);
+  border: 1.5px solid var(--saint-gold);
   z-index: 2;
   pointer-events: none;
 }
@@ -1659,16 +1693,21 @@ ol.steps li {
   font-weight: 600;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--color-parchment);
-  background: rgba(34, 30, 25, .72);
+  color: var(--saint-panel);
+  background: rgba(36, 31, 26, .72);
   padding: .32rem .6rem;
 }
 
 .saint-content h3 {
-  margin-bottom: .9rem;
+  font-weight: 600;
+  font-size: 1.65rem;
+  margin: 0 0 .9rem;
+  color: var(--saint-ink);
 }
 .saint-content p {
-  color: var(--color-ink-soft);
+  margin: 0 0 .85rem;
+  color: #3d362c;
+  font-size: 1.02rem;
 }
 
 @media (max-width: 640px) {
