@@ -1579,3 +1579,110 @@ ol.steps li {
   .hardest-teaching .jn6-commentary q {
     font-style: italic;
   }
+
+/* ============================================================
+   18. SAINT PROFILE ROWS (Saints & the Eucharist section)
+   Rebuilt from a duplicate-document paste-in that shipped its own
+   :root palette (--ink, --ivory, --oxblood, --gold, --gold-soft).
+   Because that block re-declared shared class names, it was
+   silently overriding .eyebrow / .container / .section colors
+   site-wide. These rules now use only the site's real tokens:
+     --ink      -> var(--color-ink)
+     --oxblood  -> var(--color-cardinal)
+     --gold     -> var(--color-gold)
+     --gold-soft-> var(--color-gold-bright)
+   ============================================================ */
+.saints-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+.saint-row {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.saint-row--reverse {
+  grid-template-columns: 1fr 260px;
+}
+.saint-row--reverse .saint-media {
+  order: 2;
+}
+.saint-row--reverse .saint-content {
+  order: 1;
+}
+
+.saint-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--color-parchment);
+  border: 1px solid var(--color-gold-bright);
+  overflow: hidden;
+}
+.saint-media::before,
+.saint-media::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--color-gold);
+  z-index: 2;
+  pointer-events: none;
+}
+.saint-media::before { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+.saint-media::after  { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+.saint-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+/* If the image file isn't there yet, this hides the broken-image icon
+   and the parchment panel + gold corners show through as a placeholder. */
+.saint-media img.is-missing {
+  display: none;
+}
+
+.saint-era-tag {
+  position: absolute;
+  bottom: .85rem;
+  left: .85rem;
+  z-index: 3;
+  font-family: var(--font-ui);
+  font-size: .66rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--color-parchment);
+  background: rgba(34, 30, 25, .72);
+  padding: .32rem .6rem;
+}
+
+.saint-content h3 {
+  margin-bottom: .9rem;
+}
+.saint-content p {
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 640px) {
+  .saint-row,
+  .saint-row--reverse {
+    grid-template-columns: 1fr;
+  }
+  .saint-row--reverse .saint-media,
+  .saint-row--reverse .saint-content {
+    order: initial;
+  }
+  .saint-media {
+    max-width: 260px;
+    margin: 0 auto;
+    aspect-ratio: 3 / 4;
+  }
+}
