@@ -1729,5 +1729,10 @@ ol.steps li {
 }
 
 #early-church {
-  background: linear-gradient(180deg, var(--color-gold-bright) 0%, #ffffff 100%);
+  background-color: var(--color-parchment-deep);
 }
+#saints {
+  background-color: #ffffff;
+}
+
+
