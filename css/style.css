@@ -1720,10 +1720,12 @@ ol.steps li {
     order: initial;
   }
   .saint-media {
-    max-width: 260px;
-    margin: 0 auto;
-    aspect-ratio: 3 / 4;
-  }
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+}
+
 }
 
 #early-church {
