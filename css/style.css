@@ -1725,3 +1725,7 @@ ol.steps li {
     aspect-ratio: 3 / 4;
   }
 }
+
+#early-church {
+  background: linear-gradient(180deg, var(--color-gold-bright) 0%, #ffffff 100%);
+}
