@@ -1736,3 +1736,33 @@ ol.steps li {
 }
 
 
+/* Inline "why" toggle — reads as a text link, not a boxed callout,
+   so it sits quietly in the paragraph flow instead of standing apart. */
+.why-toggle {
+  margin: 0 0 var(--space-2);
+}
+.why-toggle > summary {
+  display: inline-block;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-body);
+  font-size: inherit;
+  color: var(--color-cardinal);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(124, 36, 51, 0.35);
+}
+.why-toggle > summary::-webkit-details-marker { display: none; }
+.why-toggle > summary::marker { content: ""; }
+.why-toggle > summary:hover {
+  color: var(--color-gold);
+  text-decoration-color: currentColor;
+}
+.why-toggle[open] > summary {
+  margin-bottom: 0.4rem;
+}
+.why-toggle .why-body {
+  color: var(--color-ink-soft);
+  font-size: 0.98rem;
+}
